@@ -1,0 +1,385 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*搜索*/
+.screenHead{ width: 100%;position: fixed; top: 1.29rem; left: 0; background: #fff; z-index: 20;border-bottom: 1px solid #f5f5f5; height: 1.2rem;}
+.screenHead .label{width: 33.3%; display: inline-block; float: left; text-align: center; line-height: 1.12rem }
+.screenHead .label em{ max-width: 70%; font-size: .42rem; text-overflow: ellipsis;white-space: nowrap;overflow: hidden; display: inline-block;vertical-align: middle; color: #353535}
+.screenHead .label i{ color: #787878; font-size: .46rem; margin-left: .05rem; vertical-align: middle}
+.screenHead .label.active em,.screenHead .label.active i{ color: #e50015;}
+.statisticsResult{ height: 1.1rem; background:#f2f2f2; position: fixed; top: 2.5rem; z-index: 15; line-height: 1.15rem; color: #313131; padding: 0 0.4rem; font-size: .36rem; left: 0; width: 100%}
+.statisticsResult .batch{ font-size: .42rem; color: #e50015;position: absolute;right: .4rem; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.searchListMargin{margin-top: 3.6rem; }
+.searchList{ width: 100%; display: block; background: none !important}
+.searchList::before,.searchList::after{ display: none}
+.searchList li{ width: 100%; display: block; background: #fff; margin-bottom: .2rem; overflow: hidden;}
+.searchList li .listItem{width: 100%; display: block;overflow: hidden;}
+.searchListTop{ padding: .4rem;width: 100%; display: block;overflow: hidden;position: relative; padding-left: 1.6rem}
+.searchListTop .photo{ width: .9rem; height: .9rem; position: absolute; top: .4rem; left: .4rem;}
+.searchListTop .photo img{ width: 100%}
+.searchListTop .title{ line-height: .9rem; font-size:.44rem; font-weight: 400; color: #353535; max-width: 84%; text-overflow: ellipsis;white-space: nowrap;overflow: hidden; } 
+.searchListTop .info span{ display: inline-block; padding-left: .5rem; background: url(/static/images/icon-14.png) left center no-repeat; margin-top: .1rem; background-size: .42rem; font-size: .34rem; color: #ff7e00}
+.searchListTop .info em{ color: #ff3d4e; float: right; font-size: .4rem; margin-top: .05rem}
+.searchListTop .label{ position: absolute; right: .4rem; top: .5rem; padding: .05rem .2rem; color: #ff3d4e; font-size: .34rem;background: url(/static/images/icon-15.png) no-repeat; background-size: 100% 100%;}
+.searchListBottom{ width: 100%; display: inline-block; text-align: center}
+.searchListBottom .labelList{ width: 33.3%; float: left; display: inline-block; position: relative; margin-bottom: .25rem}
+.searchListBottom .labelList::after{ content: ''; position: absolute; right: 0; bottom: .1rem; top: .1rem; border-right: 1px solid #f5f5f5}
+.searchListBottom .labelList em{ display: block; color: #676767; font-size: .36rem; margin-bottom: .1rem}
+.searchListBottom .labelList i{ color: #3f3f3f; font-size: .4rem}
+.searchListBottom .labelList i.c-e70016{ color: #e50015}
+.searchLayerCon{position: fixed;top: 0; left: 0; width: 100%; height: 100%; z-index: 16; display: none}
+.layerBack{ position: fixed;top: 0; left: 0; width: 100%;z-index: 16; background: rgba(0,0,0,0.5); height: 100%; }
+.searchLayer{ position: fixed; top: 2.45rem; left: 0; width: 100%; background: #fff; height: 13rem; overflow: hidden; z-index: 18;}
+.searchLayer .leftOne,.searchLayer .leftTwo,.searchLayer .leftThree,.guildLayer .leftOne,.guildLayer .leftTwo{ width: 33%; float: left; background: #fff; height:100%; overflow: auto;} 
+.searchLayer .leftTwo,.guildLayer .leftTwo{background: #fafafa}
+.searchLayer .leftThree{width: 34%; background: #f5f5f5}
+.searchLayer .leftOne li,.searchLayer .leftTwo li,.searchLayer .leftThree li,.guildLayer .leftOne li,.guildLayer .leftTwo li{ padding: .4rem .3rem;border-bottom: 1px solid #f1f1f1; font-size: .4rem}
+.searchLayer .leftOne li.active,.guildLayer .leftOne li.active{ background: #fafafa; color: #e50015}
+.searchLayer .leftTwo li.active{ background: #f3f3f3;color: #e50015}
+.searchLayer .leftThree li.active{color: #e50015}
+.guildLayer .leftOne,.guildLayer .leftTwo{ width:50%;}
+.guildLayer .leftTwo li.active{color: #e50015}
+.searchLayer{ height: 13.3rem}
+.moreScreenList { width: 100%; display: inline-block;  background: #f5f5f5;float: left; overflow: auto; height: 10rem;}
+.moreScreenList li{ width: 100%; display: block; overflow: hidden; background: #fff; margin-bottom: .2rem}
+.moreScreenList li .title{ width: 100%; display: block; overflow: hidden; position: relative; padding:.3rem;border-bottom: 1px solid #f5f5f5;font-size: .4rem}
+.moreScreenList li .label{ padding: .15rem;width: 100%; display: block; overflow: hidden;}
+.moreScreenList li .label span{ margin: .15rem; display: inline-block; float: left; border: 1px solid #f5f5f5; border-radius: 4px; overflow: hidden; padding: .1rem .5rem; font-size: .36rem}
+.moreScreenList li .label span.active{ background: #e50015; color: #fff; border: 1px solid #e50015}
+ .vipTip{width: 100%; display: block; overflow: hidden; background: #f5eff0; padding:.5rem .2rem; color: #666; text-align: center; font-size: .4rem}
+.vipTip a{ margin-right: .5rem; color: #e50015}
+/*登录*/
+.headerBg{ background: #e50015; border-bottom: 0}
+.headerBg .headerIco,.headerBg .headTit{ color: #fff}
+.loginTop{ width: 100%; position: relative; display: block; overflow: hidden; background: url(/static/images/pic-2.jpg) no-repeat; background-size: 100% 100%; padding: 8% 5% 8% 8%}
+.loginTop .label{ font-size: .4rem; color: #fff; margin-bottom: 3%}
+.loginTop .loginImg{ width: 42%;}
+.loginTop .loginHref{ position: absolute; right:5%; bottom: 0; margin-bottom: 4%}
+.loginTop .loginHref img{ width: .46rem; vertical-align: middle;margin-right: .2rem}
+.loginTop .loginHref em{ color: #fff; font-size: .44rem; color: #fff; font-weight: bold; vertical-align: middle}
+.loginList{width: 100%; display: block; overflow: hidden; padding: 6% 6% 0}
+.loginList li{ border-bottom: 1px solid #f5f5f5; margin-bottom: .5rem; padding: .3rem 0; width: 100%; display: block; overflow: hidden;}
+.loginList li input{ height: .7rem; width: 100%; float: left; overflow: hidden; line-height:  .7rem; font-size: .44rem; color: #383838; font-family: inherit; margin: 0; padding: 0; border:none}
+.loginList li input::-webkit-input-placeholder {color:    #8b8b8b}
+.loginList li input:-moz-placeholder {color:#8b8b8b;}
+.loginList li input::-moz-placeholder {color:#8b8b8b;}
+.loginList li input:-ms-input-placeholder {color:#8b8b8b;}
+.loginList li.active{border-bottom: 1px solid #e50015}
+.loginList li.active input::-webkit-input-placeholder {color:    #383838}
+.loginList li.active input:-moz-placeholder {color:#383838;}
+.loginList li.active input::-moz-placeholder {color:#383838;}
+.loginList li.active input:-ms-input-placeholder {color:#383838;}
+.loginLabel{width: 100%; display: block; overflow: hidden; padding:0 6%}
+.loginLabel .left{ float: left; font-size: .38rem; color: #676767;}
+.loginLabel .left i{ font-size: .46rem; color: #ccc; vertical-align: middle; margin-right: .2rem}
+.loginLabel .left em{ vertical-align: middle}
+.loginLabel .left.active i{ color: #e50015}
+.loginLabel .left a{ color: #676767}
+.loginLabel .right{ float: right; color: #676767}
+.loginFoot{ position: fixed; bottom: 0; left: 0; width: 100%;}
+.loginFoot a{ width: 33.3%; float: left; position: relative; display: inline-block; padding: .3rem 0; text-align: center}
+.loginFoot a img{ width: .55rem; vertical-align: middle; margin-right: .2rem}
+.loginFoot a i{ color: #474747; vertical-align: middle; font-size:.38rem}
+.loginFoot a::before{ content: ''; position: absolute; right: 0; top:.35rem; bottom:.35rem; border-right: 1px solid #ddd}
+.loginFoot.active{ position: inherit}
+.loginList li.verifica input{ width: 50%;}
+.loginList li.verifica .code{ float: right; font-size: .44rem; color: #ff5968}
+.loginList li.verifica .code.gray{ color: #999}
+.agreement{ padding: .4rem; font-size: .44rem; line-height: .76rem; color: #333; text-align: justify;}
+
+/*企业*/
+.headTitLabel a{ vertical-align: middle;font-size:.5rem;}
+.headTitLabel a.acticve{ color: #e50015}
+.headTitLabel img{ vertical-align: middle; width: .3rem; margin: 0 .3rem}
+.headRightImg img{width: .7rem; margin-top: .1rem}
+.companyTop{ width: 100%; display: block; position: relative; overflow: hidden;}
+.companyTop .content{ position: absolute; top: 0; left: 0; width: 100%; bottom: 0}
+.companyTop .title{ width: 100%; text-align: center; margin: .4rem 0 .05rem}
+.companyTop .title span{vertical-align: middle; display: inline-block; width: .8rem; margin-right: .2rem}
+.companyTop .title span img{ width: 100%}
+.companyTop .title em{ vertical-align: middle; color: #fff; font-size: .5rem; font-weight: 400; max-width: 60%; display: inline-block; text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.companyTop .credit{ width: 100%; text-align: center; font-size: .34rem; color: #fff}
+.companyTop .claim{ position: absolute; right: .3rem; top: .4rem;text-align: right; width:20%}
+.companyTop .claim span{ width:.6rem; display: inline-block;}
+.companyTop .claim span img{ width: 100%}
+.companyTop .claim .claimCon{color:#ffb5b3; font-size: .34rem; margin-bottom: .1rem}
+.companyTop .claim .claimnumber{color: #ffbd7c; font-size: .34rem}
+.companyTop .number{ width: 44%; margin: 0 28%;position: absolute; bottom: -.1rem}
+.companyTop .number img{ width: 100%;}
+.companyTop .number em{ position: absolute; left: 0; width: 100%; bottom: .2rem; text-align: center; font-size:1.5rem; color: #fff; font-weight: bold}
+.companyIhfo{ background: #fff; padding: .3rem .4rem .2rem; width: 100%; display: block; overflow: hidden; border-bottom: 1px solid #f5f5f5}
+.companyIhfo .name{ font-size: .42rem;color: #858585; width: 70%; float: left;}
+.companyIhfo .name em{ display: inline-block; max-width:80%; float: left; text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.companyIhfo .name a{ color: #e50015; float: left;}
+.companyIhfo .label{ float: right; display: inline-block; width: .55rem; margin-left: .44rem}
+.companyIhfo .label img{ width: 100%}
+.companyReg{ background: #fff;border-bottom: 1px solid #f5f5f5; float: left;}
+.companyReg .labelList{ margin-bottom: 0; padding: .3rem}
+.companyReg .labelList::after{ top: 0; bottom: 0}
+.companyRisk{ width: 100%; display: block; background: #fff; overflow: hidden; padding: .5rem .4rem}
+.companyRisk .riskTop{ color:#434343; font-size: .42rem;}
+.companyRisk .riskTop em{ color: #e50015; font-size: .52rem; font-weight: 400; margin-left: .3rem}
+.companyRisk .riskTop i{padding: .05rem .2rem; margin-top: .15rem; float: right; color: #ff3d4e; font-size: .34rem;background: url(/static/images/icon-15.png) no-repeat; background-size: 100% 100%;}
+.companyRisk .plan{ border-radius: 25px; margin-top: .5rem; width: 100%; height: .4rem; background: url(/static/images/bg-04.png) repeat-x; background-size: contain; position: relative;}
+.companyRisk .plan i{ border-radius: 25px; height:100%; background: url(/static/images/bg-03.png) repeat-x; background-size: contain;position: absolute; left: 0; top: 0}
+.Unveiled{width: 100%;height: 1.3rem;display: block;overflow: hidden;background: #fff;position: relative; margin: .2rem 0}
+.UnveiledName{position: absolute;left: .4rem;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);font-size: .44rem;color: #f02a2a;}
+.UnveiledName img{width: .22rem; vertical-align: middle; margin-left: .2rem}
+.UnveiledName em{ vertical-align: middle; font-weight: 400}
+.Unveiledscroll{overflow: hidden;position: absolute;left:2rem;right: 0;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.Unveiledscroll .hd{display: none;}
+.Unveiledscroll li{font-size: .42rem;height: 22px !important;line-height: 22px;color: #656565;padding-right: .8rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;position: relative;}
+.Unveiledscroll li:after{content: '';background: url(/static/images/icon-27.png) no-repeat;background-size: .4rem;width: .4rem;height: .4rem;position: absolute;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);right: .4rem;}
+.companyWrap{ width: 100%; display: block; overflow: hidden; margin-bottom: .25rem; background: #fff; padding: .4rem}
+.companyTitle{ font-size: .5rem; color: #343434; font-weight: 400; padding: .1rem 0 .5rem; position: relative; width: 100%; display:block; overflow: hidden;}
+.companyTitle .more{display: inline-block; width: 50%; padding: .35rem 0; position: absolute; right: .1rem; top: 0}
+.companyTitle .more img{ width: .6rem; float: right}
+.mechanismList{width: 100%; display: block; overflow: hidden; margin-bottom: -.2rem}
+.mechanismList li{ width: 25%; float: left; text-align: center; margin:.2rem 0 .5rem}
+.mechanismList li img{ width: 38%; margin-bottom: .05rem}
+.mechanismList li p{ font-size: .36rem; color: #575757}
+.mechanismList li.gray p{ color: #bdbdbd}
+.warningList{width: 100%; display: block; overflow: hidden; margin-bottom:-.3rem}
+.warningList li{ margin:.2rem 0 .7rem; width: 100%; display: block; overflow: hidden;}
+.warningList li .oneTitle{ width: 100%; display: block; overflow: hidden; position: relative; font-size: .44rem; color: #343434}
+.warningList li .oneTitle .name{ max-width:70%; display: inline-block; text-overflow: ellipsis;white-space: nowrap;overflow: hidden; vertical-align: middle}
+.warningList li .oneTitle .label{ background: #e50015; color: #fff; font-size: .36rem; border-radius: 3px; padding: .03rem .2rem; margin-left: .5rem; display: inline-block; vertical-align: middle}
+.warningList li .oneTitle::after{ content: '\e6ff'; position: absolute; right: -.2rem; color: #949494; top: 50%; -webkit-transform: translateY(-50%);transform: translateY(-50%); font-size:.8rem}
+.warningList li .labelList{width: 100%; display: block; overflow: hidden; margin-top: .25rem; font-size: .4rem; color: #343434}
+.warningList li .labelList .name{max-width:70%; display: inline-block; text-overflow: ellipsis;white-space: nowrap;overflow: hidden; float: left;}
+.warningList li .labelList .time{ float: right; color: #707070}
+.atlasImg{width: 100%; display: block; overflow: hidden;}
+.atlasImg img{ display: block}
+.institutionList{ width: 100%; display: block; overflow: hidden;}
+.institutionList li{ margin-bottom:.3rem; border: 1px solid #f5f5f5; border-radius: 5px; position: relative; width: 100%; display: block; overflow: hidden;}
+.institutionList li .left{ width: 22%; float: left; text-align: center; position: relative; height:2.1rem;}
+.institutionList li .left img{ width: 1rem; margin: .2rem 0 0rem}
+.institutionList li .left::after{ content: ''; position: absolute; right: 0; top: .2rem; bottom: .2rem; border-right: 1px solid #f5f5f5;}
+.institutionList li .left p,.institutionList li .center p,.institutionList li .right p{font-size: .36rem; color: #575757; height: .6rem; margin-top: .15rem; line-height: .6rem; display: inline-block}
+.institutionList li .left p{ font-size: .4rem; margin-top: 0; height: inherit; display: block; line-height: inherit}
+.institutionList li .center{ width: 44%; float: left; padding: 0 .2rem;padding-top: .23rem; position: relative; height:2.1rem;}
+.institutionList li .center::after{ content: ''; position: absolute; right: 0; top: .2rem; bottom: .2rem; border-right: 1px solid #f5f5f5}
+.institutionList li .right{ width: 27%; float: left; text-align: center; padding-top: .38rem; position: relative; height:2.1rem;}
+.institutionList li .right em{ font-weight: bold; color: #575757;font-size: .42rem; height: .6rem; display:block; line-height: .7rem}
+.institutionList li .right.center{ width: 44%; }
+.institutionList li .right::after{ content: ''; position: absolute; right: 0; top: .2rem; bottom: .2rem; border-right: 1px solid #f5f5f5}
+.institutionList li .arrow{ position: absolute; right: 0; top: 50%; right: .2rem; -webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.institutionList li .arrow img{ width: .3rem; display: block}
+.knowledgeList{ margin: -.2rem -.2rem .2rem -.2rem; display: block; overflow: hidden;}
+.knowledgeList span{color: #575757; font-size: .42rem; padding: .1rem .8rem; display: inline-block; margin: .2rem; float: left; border: 1px solid #fddada; border-radius: 25px}
+.knowledgeList span i{ color: #e50015; font-weight: bold; margin-left: .3rem}
+.knowledgeList span.widhTwo{padding: .1rem 1.02rem;}
+.knowledgeWrap{ margin-bottom: -.4rem}
+.companyLayer{position: fixed;top: 0; left: 0; width: 100%; height: 100%; z-index: 50; display: none}
+.companyLayerBg{ position: fixed;top: 0; left: 0; width: 100%;z-index: 16; background: rgba(0,0,0,0.5); height: 100%; }
+.companyLayerCon{ position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; z-index: 18;}
+.companyLayerCon .companyLayerTitle{ width: 100%; display: inline-block; text-align: center; font-size: .5rem; color: #333; padding: .5rem 0}
+.companyLayerCon .close{ position: absolute; right: 0; top: 0; padding: .5rem .4rem; color: #898989}
+.warningLayerTitle{ width: 100%; display: inline-block; font-size: .44rem; color: #343434; padding: 3% 3% 0}
+.warningLayerList{ padding: 1.5%; width: 100%; display: inline-block; max-height: 8rem; overflow: auto; margin-bottom: .2rem}
+.warningLayerList li{ border-radius: 3px; overflow: hidden;  text-align: center; margin:1.5%; border: 1px solid #f5f5f5; float: left;}
+.warningLayerList li a{ padding: .15rem .42rem; color: #343434; font-size: .36rem; text-align: center; display: block; width: 100%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.institutionLayerList{ width: 100%; display: inline-block}
+.institutionLayerList li{ width: 25%; float: left; text-align: center; margin: .2rem 0}
+.institutionLayerList li img{ width:26%; margin-bottom: .1rem}
+.institutionLayerList li p{ color: #575757; font-size: .4rem;}
+
+/*首页*/
+.indexTop{ width: 100%; display: block; position: relative; overflow: hidden;}
+.indexTop img{ width: 100%; display: block}
+.indexSearch{ position: absolute; top: 45%; box-shadow: 0px 0px 8px #fff; width: 88%; margin: 0 6%; padding:.3rem .4rem; -webkit-transform: translateY(-50%);transform: translateY(-50%); background: #fff; border-radius: 5px}
+.indexSearch i{ vertical-align: middle; font-size: .6rem; color: #e50015}
+.indexSearch em{ font-size: .44rem; color: #bdbdbd; vertical-align: middle; margin-left: .3rem}
+.indexUnveiled{ margin: 0}
+.indexUnveiled .UnveiledName img{width: .5rem;margin-right: .1rem}
+.indexUnveiled .UnveiledName{ left: .1rem;}
+.indexUnveiled .Unveiledscroll{ left: 3.1rem;}
+.indexUnveiled .Unveiledscroll li { padding-right: .3rem}
+.indexUnveiled .Unveiledscroll li:after{ display: none}
+.indexUnveiled .Unveiledscroll li span{ display: inline-block; max-width: 70%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.indexUnveiled .Unveiledscroll li em{ float: right; color: #898989; font-size: .36rem; margin-top: .06rem}
+
+.indexNav{ width: 100%; display: block; overflow: hidden; border: 1px solid #f3f3f3; background: #fff}
+.indexNav li{ width: 33.3%; border-right: 1px solid #f3f3f3; float: left; border-bottom: 1px solid #f3f3f3; text-align: center; height: 2.7rem;}
+.indexNav li img{ width:.88rem; margin-top: .54rem; margin-bottom: .05rem}
+.indexNav li p{ color: #575757; font-size: .42rem}
+.indexNav li:nth-child(3n){ border-right: none}
+.indexHeadlines{ width: 100%; display: block; overflow: hidden; background: #fff; margin-top: .2rem}
+.HeadlinesTitle{ font-size: .48rem; color: #e70000; font-weight: 400; margin: .5rem .4rem .1rem; padding-left: .4rem; background: url(/static/images/icon-52.png) left center no-repeat; background-size: contain}
+.HeadlinesList li{ width: 100%; display: block; overflow: hidden; border-bottom: 1px solid #f3f3f3}
+.HeadlinesListItem{width: 100%; display: block; overflow: hidden; padding: .4rem .4rem .36rem; position: relative;}
+.HeadlinesListItem .title{ font-size: .44rem; color: #353535; margin-top: .05rem; text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.HeadlinesListItem .info{ font-size: .42rem; color: #555555; margin: .25rem 0 .2rem; text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.HeadlinesListItem .bottom{ font-size: .36rem; color: #898989; line-height: inherit;}
+.HeadlinesListItem .bottom .number{ float: right;}
+.HeadlinesListItem .photo{ width: 3.2rem;}
+.HeadlinesListItem .photo img{ width: 100%; display: block}
+@media screen and (min-width:412px) {
+.statisticsResult{ line-height: 1.15rem;}
+}
+@media screen and (min-width:414px) {
+.statisticsResult{ line-height: 1.1rem;}
+}
+
+
+
+/*wxs*/
+.statisticsResult2 { top: 1.5rem;}
+.searchListMargin2{margin-top: 2.3rem;}
+.creditLine { padding: .3rem .4rem .2rem;width: 100%; border-top: 1px solid #f5f5f5;}
+.creditBtton { background: #ff7e00;color: #fff; font-size: .4rem; width: 50%; margin: 0 auto .4rem auto; text-align: center;padding: .2rem; border-radius: 3px; }
+.creditBtton2 { font-size: .32rem; width: auto; margin: .26rem 0;padding: .1rem .2rem;}
+.credit .title{ line-height: 1.1rem; font-size:.46rem; font-weight: 400; color: #353535; display: inline-block; } 
+.credit .Add { display: inline-block; margin-left: 3%; color: #a6a6a6;}
+.creditList{ width: 100%; display: block; background: none !important;padding-top: .3rem}
+.creditList::before,.creditList::after{ display: none}
+.creditList li{ width: 100%; display: block; background: #fff; margin-bottom: .2rem; overflow: hidden;padding: .3rem;}
+.creditList li .title {font-size:.42rem; font-weight: 400; color: #353535; float: left; margin: 0rem .3rem;}
+.creditFour { display: inline-block;width: 100%;}
+.creditFour li { display: inline-block;width: 33.33333%; float: left;padding: .3rem .1rem 0; margin: 0; text-align: center;font-size: .32rem;}
+.creditFour input { display: none;}
+.footerCredit {width: 100%; position: fixed; bottom: 0; left: 0; background: #f9f9f9; box-shadow: 0px 0px 5px #cbcbcb;height: 1.4rem;z-index: 20;}
+.footerCredit .amount {}
+.Creditbotton { font-size: .5rem; color: #fff; background: #e50015; width: auto; margin:2% 3%;border-radius: 3px; padding: .2rem .5rem; border: none;}
+.footerCredit .money{ line-height: 1.5rem; margin: 0 3%; font-size:.46rem; font-weight: 400; color: #353535; display: inline-block; } 
+.footerCredit .money i { color: #e50015;}
+
+.creditPay { margin: 0; display: block; width: 100%; border-top: 5px solid #f5f5f5; text-align: center; padding: 6% 0;}
+.creditPayMoney { margin: 5% auto; width: 50%;background: url(/static/images/PAY.jpg) no-repeat; background-size: cover;}
+.creditPayMoney em { color: #353535; line-height: 1.2rem; font-size: .4rem; width: 100%; display: inline-block;}
+.creditPayMoney i { color: #e50015;font-size: 1rem; font-weight: 600; }
+
+.creditPay .PayTit { font-size:.46rem; font-weight: 400; color: #353535; display: inline-block; text-align: left;margin: 0 3%; width: 94%; }
+.creditPay img { width: 50%;}
+.creditPay ul li { display: inline-block; width: 40%; margin-top: 6%;}
+.creditPay ul li span {display: inline-block; width: 100%; line-height: 1rem;}
+.creditPDF { margin: 6% 5% 1%; display: inline-block; width: 90%;  min-height: 14.5rem; background: #e50015;}
+.creditEmail { margin: 0 2%; display: inline-block;width: 96%;}
+.creditEmail input {border: 1px solid #f2f2f2;border-radius: 3px;display: inline-block;margin: 2% 0 0 3%;width: 62%;padding: .2rem .5rem; height: auto;}
+
+/*input框中颜色更改*/
+.color-input-red +label{float: left; border-radius: 3px;
+	display: block;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    background: rgba(199, 199, 199, 1);;
+}
+ 
+.color-input-red:checked +label{ border-radius: 3px;
+    display: block;
+    text-align: center;
+    background: rgba(231, 0, 0, 1);;
+}
+input[type=checkbox]{
+	visibility: hidden;
+}
+
+.color-input +label{float: left; border-radius: 3px; padding: .2rem; border:1px solid #cbcbcb; width: 92%;
+	display: block;
+    cursor: pointer;
+}
+.color-input:checked +label{ border-radius: 3px; border:1px solid #ff7171;
+    display: block;
+    text-align: center;
+    color: #ff7171;
+}
+
+
+.hotSearch{ width:100%;background: #fff; display: inline-block; float: left; border-top: 5px solid #f5f5f5;}
+.hotSearchTit{ padding: 3%; font-weight: normal; font-size: .42rem; color: #353535;position: relative; width: 100%; display: inline-block;border-bottom: 1px solid #f5f5f5;}
+.hotSearchTit:before{ content: '\e60d'; color: #999; font-size: .4rem;position: absolute; right:0%; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); padding-right: .3rem;}
+.hotSearchTit em{font-size: .22rem; color: #999; margin-top: 2px;}
+.hotSearchList {display: inline-block; width: 100%; float: left; margin-top: 3%;}
+.hotSearchList a{ border: 1px solid #f5f5f5; border-radius: 3px; padding: .2rem .5rem; font-size: .36rem; color: #666;  min-width:70px; display: inline-block; text-align: center; float: left; margin:0 0 3% 3%}
+.hotSearchList a.active{ background: #cbcbcb;}
+.hotSearchHistory { width: 94%; margin: 0 3%; display: inline-block;}
+.hotSearchHistory a { display: inline-block; font-size: .36rem; color: #666; padding: .3rem 0 .2rem 0;border-bottom: 1px solid #f5f5f5; width: 100%; }
+.hotSearchHistory a:before { content: '\e63a'; color: #999; font-size: .4rem;-webkit-transform: translateY(-50%);transform: translateY(-50%); margin-right: .2rem;}
+
+/*gsf 2019-02-27*/
+/*企业空间*/
+.spaceTop .title span{width: 100%;display: block;text-align: center;}
+.spaceTop .title span img{ width: .8rem; margin:.1rem 0 .2rem}
+.spaceDetails{ margin-bottom: 0}
+.spaceDetailsCon .content{ font-size: .4rem; margin-top: -.1rem; color: #393939; line-height: .64rem; text-align: justify;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical; word-break: break-all;overflow: hidden;}
+.spaceDetailsCon .spaceOpen{ color: #e87f7f; font-size: .4rem; margin-top: .2rem}
+.spaceDetailsList{width:100%; display: block; overflow: hidden; background: #fff}
+.spaceDetailsList li{ border-top: 1px solid #f5f5f5; width: 100%; display: block; padding: .4rem; color: #393939; font-size: .4rem; position: relative; padding-left: 1.25rem}
+.spaceDetailsList li img{ width: .45rem; vertical-align: middle; position: absolute; left: .4rem; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); }
+.mt2{ margin-top: .2rem}
+.spaceInstitution li .left img{ width:1.4rem !important; margin-top: .35rem !important}
+.spaceInstitution li .center{ width: 70%; padding-left: .4rem}
+.spaceInstitution li .center p{ display: block}
+.spaceInstitution li .center::after{ display: none}
+.spaceInstitution li .center .name{ font-size: .42rem;}
+.spaceScorll{ width: 100%; display: block; overflow: hidden;position: relative;}
+.spaceScorll ul{float: left; width: 100%;white-space: nowrap;overflow-y: hidden;}
+.spaceScorll ul li{display: inline-block;vertical-align: top; margin: 0 .3rem 0 0; text-align: center}
+.spaceScorll ul li img{ height:2rem;}
+.spaceScorll ul li p{ display: block;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; font-size: .36rem; margin-top: .1rem; color: #666}
+.spaceNoticeList{ margin-top: -.2rem}
+.spaceNoticeList li{ padding: .3rem 0;}
+.spaceNoticeList li a{ width: 100%; display: block; overflow: hidden;}
+.spaceNoticeList li .time{ color: #707070; font-size: .36rem; margin-bottom: .25rem}
+.spaceNoticeList li .title{ color: #343434; font-size: .42rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.spaceNull{ background: #f7f7f7; width: 100%; display: none; color: #454545; font-size: .42rem; text-align: center; padding: .8rem 0}
+.spaceNullBg{ background: none}
+.spaceFoot{ position: fixed; bottom: 0; font-weight: 400; left: 0; width: 100%; background: #fff; color: #575757; border-top:1px solid #f5f5f5; text-align: center; padding: .4rem ;font-size: .44rem}
+.spaceFoot:active{ color: #575757}
+/*免责声明*/
+.disclaimer{ padding: .4rem; line-height: .68rem; font-size: .42rem; color: #575757}
+.disclaimer p{ margin-top: .4rem; font-size: .42rem; color: #575757}
+/*商品抽检*/
+.shopInspect .companyTitle{ font-size: .44rem !important}
+.shopInspectList{ width: 100%; display: block; overflow: hidden;}
+.shopInspectList li{ border: 1px solid #f5f5f5; position: relative; display: inline-block; width: 3.5rem; margin-right: .4rem; text-align: center; float: left; height: 1.6rem; border-radius:5px}
+.shopInspectList li span{ font-size: .42rem; color: #666; display: block; margin: .2rem 0 .1rem}
+.shopInspectList li em{ font-size: .36rem; color: #999}
+.shopInspectList li.active{border-color: #e50015}
+.shopInspectList li.active span{color: #e50015}
+.shopInspectList li.active em{color: #ff6b6b}
+.shopInspectForm{ width: 100%; display: block; overflow: hidden;}
+.shopInspectForm li{ background: #fff; margin-bottom: .2rem; padding: .4rem; width: 100%; display: block; overflow: hidden; position: relative;}
+.shopInspectForm li .inName{ font-size: .44rem; float: left; color: #333;}
+.shopInspectForm li .inInput{ margin-bottom: 0; padding: 0; margin-top: .05rem; font-size: .44rem; font-family: inherit; font-weight: 300; width: 70%; text-align: right; float: right; height: inherit; border: none; line-height: inherit}
+.shopInspectForm li.ListAfter{ padding-right: .9rem}
+.shopInspectForm li.ListAfter::after{content: '';background: url(/static/images/icon-27.png) no-repeat;background-size: .4rem;width: .4rem;height: .4rem;position: absolute;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);right: .4rem;}
+.shopInspectFoot{ background: #e50015; color: #fff}
+.shopInspectFoot:active{ color: #fff}
+.inspectList{ width: 100%; display: block; overflow: hidden; padding: 0 .4rem; background: #fff}
+.inspectList li{ padding: .4rem 0; width: 100%; display: block; overflow: hidden;  border-bottom: 1px solid #f5f5f5; position: relative}
+.inspectList li .title{ font-size: .48rem; font-weight: 400; color: #333; margin-bottom: .15rem; width: 100%; display: inline-block}
+.inspectList li .label{ font-size: .44rem; color: #999; margin-top: .2rem; width: 100%; display: block; overflow: hidden; }
+.inspectList li .state{ position: absolute; right:0; top: .4rem; font-size: .44rem}
+.c-999{ color: #999;}
+.inspectList li:last-child{border: none}
+/*商品抽检详情*/
+.shopDetailsList,.shopDetailsList li{width: 100%; display: block; overflow: hidden; }
+.shopDetailsList li{ background: #fff; margin-bottom: .2rem}
+.shopDetailsList li .title{ padding: .4rem; font-size:.4rem; color: #999; border-bottom: 1px solid #f5f5f5}
+.shopDetailsList li .content{ font-size: .48rem; padding: .35rem .4rem; line-height: .68rem; color: #333}
+/*食品抽检*/
+.foodSearch{ width: 90%; margin: 10% 5%; padding: .4rem .4rem .42rem; background: #efefef; border-radius: 3px; overflow: hidden; position: relative;}
+.foodSearch .scan{ position: absolute; right:.4rem; top: 50%; width: .6rem; -webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.foodSearch .scan img{ width: 100%; display: block}
+.foodSearch .foodSearchText{ margin-bottom: 0; float: left; background: none; height: .4rem; line-height: .4rem; padding: 0;font-size: .44rem; font-family: inherit; font-weight: 300; width: 70%; height: inherit; border: none; line-height: inherit}
+.foodSearchCon{width: 90%; margin: 0 5%; display: inline-block; overflow: hidden;}
+.foodSearchTitle{ font-size: .44rem; color: #333; font-weight: 400}
+.foodSearchLabel{width: 100%; display: block; overflow: hidden; margin-bottom: 10%}
+.foodSearchLabel a{ border: 1px solid #f5f5f5; padding: .1rem .4rem; border-radius: 3px; font-size: .4rem; color: #999; display: inline-block; margin: .4rem .4rem 0 0; float: left;}
+.footListTip{ padding: .3rem .4rem; font-size: .38rem; color: #666; width: 100%; display: block; overflow: hidden;}
+.footListTitle{ background: #fff; width: 100%; display: block; overflow: hidden; border-bottom: 1px solid #f5f5f5; padding: .4rem; font-size: .44rem; color: #666}
+.footListTitle em{ float: right;}
+.footDetailsList{ width: 100%; display: block; overflow: hidden;}
+.footDetailsList li{ background: #fff; margin-bottom: .2rem;  padding:.3rem .4rem; color: #999; font-size: .44rem; position: relative;}
+.footDetailsList li .state{ position: absolute; right:.4rem; top: 50%; width: 2rem; -webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.footDetailsList li .label{line-height: .68rem;margin: .1rem 0}
+@media screen and (min-width:412px) {
+.shopInspectForm li .inInput{ margin-top: 0}
+}
+@media screen and (min-width:414px) {
+
+}
+
