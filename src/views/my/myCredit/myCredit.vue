@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<Header></Header>
 		<div class="marginTop">
 			<van-tabs type="card">
@@ -107,11 +107,15 @@
 	}
 
 	/deep/ .van-ellipsis {
-		line-height: 1.1rem
+		line-height: 1.15rem;
+		color: #333;
 	}
-
+	/deep/ .van-tabs--card {
+		padding-top: 1.15rem
+	}
 	/deep/ .van-tabs__nav--card .van-tab {
-		height: 1.1rem;
+		height: 1.15rem;
+		border-right: none
 	}
 
 	/deep/ .van-tabs--card>.van-tabs__wrap {
@@ -122,12 +126,19 @@
 		/* margin-top: .1rem */
 	}
 	/deep/ .van-tabs__nav--card .van-tab.van-tab--active{
-		background: #e50015;
+		background: #ffffff;
+		color: #e50015
 	}
 	/deep/ .van-tabs__nav--card{
-		border:  1px solid #e50015
+		border: none
 	}
+	/deep/ .van-tab--active::after{
+		content: '';position: absolute; bottom: 0; left: 30%; right: 30%; border-bottom: 3px solid #e50015
 
+	}
+	/deep/ .van-tab--active .van-ellipsis{
+		color: #e50015
+	}
 	.myCredit {
 		width: 100%;
 		vertical-align: middle

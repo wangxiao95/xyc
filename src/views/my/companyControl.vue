@@ -54,7 +54,9 @@
 <style scoped>
 	.focusItem{
 		padding: .5rem;
-		border-bottom: .3rem solid #f3f5f7
+		/* border-bottom: .3rem solid #f3f5f7 */
+		margin-bottom: .3rem;
+		background: #fff;
 	}
 	.HeadlinesList{
 		margin-top: 1.6rem;
@@ -62,8 +64,10 @@
 	.companyLine{
 		
 		padding: .5rem .5rem;
-		border-bottom: .2rem solid #f3f5f7;
+		/* border-bottom: .2rem solid #f3f5f7; */
 		/* border-top: 1px solid #f00 */
+		margin-bottom: .2rem;
+		background: #fff;
 	}
 	.itemAll:first-child{
 		border-top: 1px solid #f3f5f7

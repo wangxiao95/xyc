@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<section class="wb100 dis-ib conBottom">
-			<div class="indexTop" @click="$router.push('/search')">
+			<div class="indexTop" @click="$router.push('/searchList')">
 				<img src="/static/images/bg-02.jpg">
 				<div class="indexSearch">
 					<i class="iconfont">&#xe63b;</i>
@@ -83,7 +83,7 @@
 				<h5 class="HeadlinesTitle">信用头条</h5>
 				<ul class="HeadlinesList" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading">
 					<li class="itemR" v-for="(item,index) in pageList" :key="index">
-						<a href="javascript:;" class="HeadlinesListItem">
+						<a @click="$router.push('/creditDetail')" class="HeadlinesListItem">
 							<div class="photo fl mrb3"><img :src="item.img"></div>
 							<h5 class="title">{{item.title}}</h5>
 							<p class="info">{{item.info}}</p>
@@ -150,7 +150,7 @@
 				
 			},
 			getData(){
-				this.$axios.post(`/solr/qst_entfind_new/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				this.$axios.post(`/solr//qst_entfind_djg/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
 					console.log("qst_entfind_new",res)
 				})
 			}

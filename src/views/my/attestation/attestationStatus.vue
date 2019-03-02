@@ -1,5 +1,5 @@
 <template>
-	<div class="body">
+	<div class="container">
 		<Header></Header>
         <img src="/static/images/icon-35.png" class="logo">
         <div class="marginTop">
@@ -32,7 +32,7 @@
 		},
 		data() {
 			return {
-                isA:"1"
+                isA:"2"
             }
 		},
 		methods:{},

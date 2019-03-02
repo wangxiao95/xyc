@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<Header></Header>
 		<section class="wb100 dis-ib conTop">
 			<div class="loginTop">
@@ -68,6 +68,7 @@
 	/deep/ .header-title {
 		background: #e70000 !important;
 		color: #fff;
+		border-bottom: none;
 	}
 
 	/deep/ .van-checkbox__icon--checked .van-icon {
@@ -75,7 +76,7 @@
 		border-color: #e70000;
 	}
 
-	input[type="text"] {
+	/* input[type="text"] {
 		padding: .5rem;
-	}
+	} */
 </style>

@@ -27,7 +27,7 @@
 
 <style >
 	/*底部菜单*/
-	.footer{ width: 100%; position: fixed; bottom: 0; left: 0; background: #fff; box-shadow: 0px 0px 5px #eee; height:1.4rem; z-index: 20;}
+	.footer{ width: 100%; position: fixed; bottom: 0; left: 0; background: #fff; box-shadow: 0px 0px 5px #eee; height:1.6rem; z-index: 20;}
 	.footer a{ width: 25%; float: left; text-align: center; color: #ccc;}
 	.footer a span{ font-size:.7rem; position:relative; width: 100%; display: inline-block; float: left; padding-top: .11rem; height: .73rem; margin: .12rem 0 .05rem; }
 	.footer a p{ font-size:.32rem;color:#888;float:left; width:100%;}

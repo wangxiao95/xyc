@@ -1,75 +1,57 @@
 <template>
-    <div>
+    <div class="container">
         <Header></Header>
-        <div class="loginList">
-            <ul :model="formData">
-                <li>
-                    <input type="text" v-model="formData.pwd" placeholder="请输入当前密码">
-                </li>
-                <li>
-                    <input type="text" v-model="formData.newPwd" placeholder="请输入新密码">
-                </li>
-                <li>
-                    <input type="text" v-model="formData.nextPwd" placeholder="重复输入新密码">
-                </li>
-            </ul>
-            <van-button type="primary" @click="submit">立即修改</van-button>
-            <div class="forget fr" @click="$router.push('/findPwd')">
-                忘记密码，通过手机号重置
+        <section class="wb100 dis-ib conTop">
+           
+            <div class="loginList">
+                <ul :model="formData">
+                    <li>
+                        <input type="text" v-model="formData.oldPwd" placeholder="请输入旧密码">
+                    </li>
+                    <li>
+                        <input type="text" v-model="formData.newPwd" placeholder="请输入新密码">
+                    </li>
+                    <li>
+                        <input type="text" v-model="formData.surePwd" placeholder="请确认新密码">
+                    </li>
+                </ul>
+                <div class="forget fr" @click="$router.push('/findPwd')">
+                    忘记密码，通过手机号重置
+                </div>
             </div>
-        </div>
+            <div class="wb100 dis-ib tc mtb5">
+                <a @click="submit" class="BtnSmall">提交</a>
+            </div>
+        </section>
     </div>
 </template>
 
 <script>
-    import Header from "@/components/Header"
-    import { Toast } from "mint-ui"
+    import Header from "@/components/Header.vue";
     export default {
         components: {
             Header
         },
         data() {
             return {
-                formData:{
-                    pwd:"",
-                    newPwd:"",
-                    nextPwd:""
+                formData: {
+                    oldPwd: "",
+                    newPwd: "",
+                    surePwd: ""
                 }
             }
         },
         methods: {
             submit() {
-                this.formData.pwd =""
-                this.formData.newPwd = ""
-                this.formData.nextPwd = ""
-                let instance = Toast('修改成功');
-                setTimeout(() => {
-                    instance.close();
-                }, 2000);
+
             }
-        },
-        created() { }
+        }
     }
 </script>
 
 <style scoped>
-    .loginList{
-        margin-top: 1.4rem
-    }
-    .loginList li{
-        border: none
-    }
-    .loginList li input{
-        border:1px solid #ccc;
-        height: 1.2rem;
-        padding: .3rem;
-    }
-    /deep/ .van-button{
-        width: 100%;
 
-    }
     .forget{
-        color: #409eff;
-        padding: .15rem .05rem
+        color: #999
     }
 </style>

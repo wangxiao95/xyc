@@ -18,9 +18,11 @@
 
 <style>
 	.header-title{
-		background: #fff;
+		background: #fff!important;
 		color: #333;
 		height: 1.5rem;
 		font-size: .6rem;
+        z-index: 999;
+        border-bottom: 1px solid #f5f5f5;
 	}
 </style>

@@ -4,7 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
 	routes: [{
 			path: '/',
 			redirect: "/home",
@@ -37,7 +37,7 @@ export default new Router({
 		{
 			path: '/creditTT',
 			name: 'creditTT',
-			component: () => import("@/views/creditTT/index.vue"),
+			component: () => import("@/views/creditTT/creditTT.vue"),
 			meta: {
 				title: "信用头条"
 			}
@@ -50,6 +50,14 @@ export default new Router({
 			meta: {
 				title: "个人中心"
 			},
+		},
+		{
+			path: '/creditDetail',
+			name: 'creditDetail',
+			component: () => import("@/views/creditTT/creditDetail.vue"),
+			meta: {
+				title: "信用头条"
+			}
 		},
 		{
 			path: '/userInfo',
@@ -73,6 +81,14 @@ export default new Router({
 			component: () => import("@/views/login/reg.vue"),
 			meta: {
 				title: "注册"
+			}
+		},
+		{
+			path: '/feedback',
+			name: 'feedback',
+			component: () => import("@/views/my/setting/feedback.vue"),
+			meta: {
+				title: "意见反馈"
 			}
 		},
 		{
@@ -236,6 +252,14 @@ export default new Router({
 			}
 		},
 		{
+			path: '/companyDetail',
+			name: 'companyDetail',
+			component: () => import("@/views/company/companyDetail.vue"),
+			meta: {
+				title: "企业详情"
+			}
+		},
+		{
 			path: '/space',
 			name: 'space',
 			component: () => import("@/views/company/space.vue"),
@@ -249,6 +273,38 @@ export default new Router({
 			component: () => import("@/views/company/disclaimer.vue"),
 			meta: {
 				title: "免责声明"
+			}
+		},
+		{
+			path: '/about',
+			name: 'about',
+			component: () => import("@/views/my/about.vue"),
+			meta: {
+				title: "关于信用查"
+			}
+		},
+		{
+			path: '/break',
+			name: 'break',
+			component: () => import("@/views/break/break.vue"),
+			meta: {
+				title: "失信名录"
+			}
+		},
+		{
+			path: '/breakList',
+			name: 'breakList',
+			component: () => import("@/views/break/breakList.vue"),
+			meta: {
+				title: "失信名录"
+			}
+		},
+		{
+			path: '/setting',
+			name: 'setting',
+			component: () => import("@/views/my/setting/setting.vue"),
+			meta: {
+				title: "系统设置"
 			}
 		},
 		{
@@ -371,5 +427,17 @@ export default new Router({
 				title: "药品查询"
 			}
 		},
+		{
+			path: '/echarts',
+			name: 'echarts',
+			component: () => import("@/views/echarts/echarts.vue"),
+			meta: {
+				title: "图谱"
+			}
+		},
 	]
 })
+router.afterEach((to, from, next) => {
+	window.scrollTo(0, 0);
+  });
+  export default router

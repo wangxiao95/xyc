@@ -12,7 +12,7 @@
 				<van-tab title="全部动态">
 					<span :class="{active:active}" class="active">
 						<div>
-							<div v-for="(item,index) in pageList" :key="index" class="companyBox">
+							<div v-for="(item,index) in pageList" :key="index" class="companyBox" @click="$router.push('/company')">
 								<div class="clearfix">
 									<div class="company fl">{{item.company}}</div>
 									<div class="status fr" :class="item.status  == '经营' ? ' being':'' + item.status == '司法' ? ' already':''">{{item.status == '经营' ? '经营':'' + item.status == '司法' ? '司法':''}}</div>
@@ -30,7 +30,7 @@
 				<van-tab title="经营预警">
 					<span :class="{active:active}">
 						<div>
-							<div v-for="(item,index) in pageList" :key="index" class="companyBox">
+							<div v-for="(item,index) in pageList" :key="index" class="companyBox" @click="$router.push('/company')">
 								<div class="clearfix">
 									<div class="company fl">{{item.company}}</div>
 									<div class="status fr" :class="item.status  == '经营' ? ' being':'' + item.status == '司法' ? ' already':''">{{item.status == '经营' ? '经营':'' + item.status == '司法' ? '司法':''}}</div>
@@ -47,7 +47,7 @@
 				<van-tab title="司法预警">
 					<span :class="{active:active}">
 						<div>
-							<div v-for="(item,index) in pageList" :key="index" class="companyBox">
+							<div v-for="(item,index) in pageList" :key="index" class="companyBox" @click="$router.push('/company')">
 								<div class="clearfix">
 									<div class="company fl">{{item.company}}</div>
 									<div class="status fr" :class="item.status  == '经营' ? ' being':'' + item.status == '司法' ? ' already':''">{{item.status == '经营' ? '经营':'' + item.status == '司法' ? '司法':''}}</div>
@@ -142,9 +142,10 @@
 	}
 
 	/deep/ .van-ellipsis {
-		line-height: 3;
-		font-size: .5rem
+		line-height: 44px;
+		font-size: .48rem
 	}
+	/deep/ .van-tabs__line{ background: #e50015}
 
 	.acticve {
 		color: #f44
@@ -152,15 +153,20 @@
 
 	.companyBox {
 		padding: .35rem .5rem;
-		border-bottom: .2rem solid #f3f5f7
+		/* border-bottom: .2rem solid #f3f5f7 */
+		margin-bottom: .2rem;
+		background: #fff;
 	}
 
 	.companyBox:first-child {
-		border-top: .2rem solid #f3f5f7
+		/* border-top: .2rem solid #f3f5f7 */
+		margin-top: .2rem;
+		/* background: #fff; */
 	}
 
 	.company {
-		font-size: .5rem;
+		font-size: .44rem;
+		font-weight: 400;
 		margin-bottom: .3rem;
 	}
 
@@ -168,6 +174,7 @@
 		border: 1px solid #333;
 		padding: .05rem .2rem;
 		border-radius: 8%;
+		    font-size: .36rem;
 	}
 
 	.already {
@@ -181,10 +188,12 @@
 	}
 
 	.content {
-		color: #666
+		color: #666;
+		font-size: .36rem;
 	}
 
 	.time {
-		color: #999
+		color: #999;
+		font-size: .36rem;
 	}
 </style>

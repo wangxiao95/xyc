@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<Header></Header>
 		 <section class="wb100 dis-ib conTop">
 		    <div class="loginTop">
@@ -54,5 +54,6 @@
 	/deep/ .header-title{
 		background: #e70000!important;
 		color: #fff;
+		border-bottom: none;
 	}
 </style>

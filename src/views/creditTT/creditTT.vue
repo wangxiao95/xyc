@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<Header></Header>
 		 <div class="swiper">
                 <swiper v-if="banner.length > 0" :options="swiperOption">
@@ -17,7 +17,7 @@
                 </swiper>
 				<ul class="HeadlinesList" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading">
 					<li class="itemR" v-for="(item,index) in pageList" :key="index">
-						<a href="javascript:;" class="HeadlinesListItem">
+						<a @click="$router.push('/creditDetail')" class="HeadlinesListItem">
 							<div class="photo fr mrb3"><img :src="item.img"></div>
 							<h5 class="title">{{item.title}}</h5>
 							<p class="info">{{item.info}}</p>

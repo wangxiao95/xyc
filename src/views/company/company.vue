@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="companyIhfo">
-            <span class="name"><em>简介：腾讯科技（上海）有限公司成立于</em><a href="details.asp">详情</a></span>
+            <span class="name"><em>简介：腾讯科技（上海）有限公司成立于</em><a @click="$router.push('/companyDetail')">详情</a></span>
             <a href="javascript:;" class="label"><img src="/static/images/icon-24.png"></a>
             <a href="javascript:;" class="label"><img src="/static/images/icon-23.png"></a>
             <a href="javascript:;" class="label"><img src="/static/images/icon-22.png"></a>

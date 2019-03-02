@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<Header></Header>
 		<div class="headerBox clearfix">
 			<img src="/static/images/user.png" class="userImg fl">
@@ -65,7 +65,7 @@
                 </router-link>
             </li>
         </ul>
-		 <img src="/static/images/setting.png" class="setting">
+		 <img src="/static/images/setting.png" class="setting" @click="$router.push('/setting')">
 		<div class="shareBox">
 			 <img src="/static/images/share.png" class="share">
 			 <span class="share1">1</span>

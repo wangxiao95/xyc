@@ -163,7 +163,7 @@
 					<div class="photo">
 						<img :src="item.img">
 					</div>
-					<h5 class="title">{{item.title}}</h5>
+					<h5 class="title">{{item.ENTNAME}}</h5>
 					<div class="info" v-if="look">
 						<span>信用查认证</span>
 						<em>98分</em>
@@ -173,15 +173,18 @@
 				<div class="searchListBottom">
 					<span class="labelList">
 						<em>法定代表人</em>
-						<i class="c-e70016">{{item.low1}}</i>
+						<i class="c-e70016" v-if="item.NAME">{{item.NAME}}</i>
+						<i v-else>---</i>
 					</span>
 					<span class="labelList">
 						<em>注册资本</em>
-						<i>{{item.low2}}</i>
+						<i v-if="item.REGCAP">{{item.REGCAP}}</i>
+						<i v-else>---</i>
 					</span>
 					<span class="labelList">
 						<em>成立日期</em>
-						<i>{{item.low3}}</i>
+						<i v-if="item.REGCAP">{{item.ESDATE}}</i>
+						<i v-else>---</i>
 					</span>
 				</div>
 				</div>
@@ -308,9 +311,11 @@
 			loadMore() {
 
 			},
-			getData() {
-				this.$axios.get(`/solr/groupinfo/searchList`,{params:{key:"*",queryType:"all",value:"*",pageNo:"1"}}).then(res=>{
-					console.log("搜索",res)
+			getData(){
+				// this.$axios.post(`/solr/qst_entfind_new/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				this.$axios.post(`/solr/qst_entinfobypripid/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+					console.log("1",res)
+					this.pageList = res.response.docs
 				})
 			},
 			search() {
@@ -340,6 +345,11 @@
 		height: 10rem;
 	}
 	.pageListBox{
-		border-bottom: .2rem solid #f3f5f7
+		/* border-bottom: .2rem solid #f3f5f7 */
+		    width: 100%;
+    display: block;
+    background: #fff;
+    margin-bottom: .2rem;
+    overflow: hidden;
 	}
 </style>

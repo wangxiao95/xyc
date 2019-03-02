@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<Header></Header>
         <img src="/static/images/icon-35.png" class="logo">
         <div class="marginTop">

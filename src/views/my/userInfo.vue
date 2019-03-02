@@ -1,64 +1,54 @@
+
 <template>
-    <div>
+    <div class="container">
         <Header></Header>
-        <div>
-            
+        <img src="/static/images/icon-35.png" class="logo">
+        <div class="marginTop">
             <div class="userList">
-                <ul :model="formData">
+                <ul>
                     <li class="title">个人信息</li>
                     <li class="clearfix">
-                        <span>账号：</span>
-                        <input type="text" v-model="formData.accountNo">
+                        <span class="fl">账号：</span>
+                        <input class="fr tr" type="text" placeholder="请输入账号">
                     </li>
                     <li class="clearfix">
-                        <span>昵称：</span>
-                        <input type="text" v-model="formData.password">
+                        <span class="fl">姓名：</span>
+                        <input class="fr tr" type="text" placeholder="请输入姓名">
                     </li>
                     <li class="clearfix">
-                        <span>姓名：</span>
-                        <input type="text" v-model="formData.password">
+                        <span class="fl">性别：</span>
+                        <input class="fr tr" type="text" placeholder="请输入性别">
                     </li>
                     <li class="clearfix">
-                        <span>性别：</span>
-                        <!-- <input type="text" v-model="formData.password"> -->
-                        <van-radio-group v-model="radio">
-                            <van-radio name="1">男</van-radio>
-                            <van-radio name="2">女</van-radio>
-                            <van-radio name="3">保密</van-radio>
-                        </van-radio-group>
+                        <span class="fl">联系电话：</span>
+                        <input class="fr tr" type="text" placeholder="请输入电话号码">
                     </li>
                     <li class="clearfix">
-                        <span>联系电话：</span>
-                        <input type="text" v-model="formData.password">
+                        <span class="fl">邮箱：</span>
+                        <input class="fr tr" type="text" placeholder="请输入您的联系邮箱">
                     </li>
-                     <li class="clearfix">
-                        <span>邮箱：</span>
-                        <input type="text" v-model="formData.password">
+                    <li class="title">公司信息</li>
+                    <li class="clearfix">
+                        <span class="fl">公司名称：</span>
+                        <input class="fr tr" type="text" placeholder="请输入您的公司名称">
                     </li>
-                     <li class="title">公司信息</li>
-                      <li class="clearfix">
-                        <span>公司名称：</span>
-                        <input type="text" v-model="formData.password">
+                    <li class="clearfix">
+                        <span class="fl">职位：</span>
+                        <input class="fr tr" type="text" placeholder="请输入您的职位">
                     </li>
-                     <li class="clearfix">
-                        <span>职位：</span>
-                        <input type="text" v-model="formData.password">
+                    <li class="clearfix">
+                        <span class="fl">行业：</span>
+                        <input class="fr tr" type="text" placeholder="请输入您的所属行业">
                     </li>
-                     <li class="clearfix">
-                        <span>行业：</span>
-                        <input type="text" v-model="formData.password">
-                    </li>
-                </ul>
-                <div class="tc">
-                    <van-button type="primary">提交</van-button>      
-                </div>
+                </ul>   
+                <van-button class="submit" @click="submit">提交个人信息</van-button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import Header from "@/components/Header";
+    import Header from "@/components/Header"
     export default {
         components: {
             Header
@@ -66,61 +56,82 @@
         data() {
             return {
                 formData: {
-                    accountNo: "",
-                    password: ""
-
+                    company: "",
+                    idCard: "",
+                    name: "",
+                    mobile: "",
+                    email: "",
                 },
-                radio:""
-            };
+                checked: false
+            }
         },
-        methods: {},
+        methods: {
+            submit() {
+                this.$router.push("/attestationStatus")
+            }
+        },
         created() { }
-    };
+    }
 </script>
 
 <style scoped>
-    .userList {
-        margin-top: 1.6rem
+        .title {
+        font-weight: bold;
+        font-size: .5rem
     }
-    .userList li{
-        margin: .3rem 1.2rem
+    .read {
+        font-size: .38rem;
+        color: #ccc;
+        padding: .4rem .4rem;
     }
-    .userList li span{
-        float: left;
+
+    /deep/ .van-radio__label {
+        color: #999;
+    }
+
+    .userList li {
+        margin: 0rem .4rem;
+        border-bottom: 1px solid rgb(241, 241, 241);
+        padding: .3rem 0;
+    }
+
+    .marginTop {
+        border-top: 1px solid rgb(241, 241, 241)
+    }
+
+    .userList li span {
+        font-family: "Microsoft YaHei";
+        color: #444;
+        font-size: .44rem;
         display: inline-block;
         line-height: .9rem;
-        width: 2.4rem
+        /* width: 2.4rem */
     }
+
     .userList li input {
         height: .9rem;
         width: 7rem;
-        float: left;
         overflow: hidden;
         line-height: .7rem;
         font-size: .44rem;
         color: #383838;
         font-family: inherit;
         margin: 0;
-        padding:0 .15rem;
-        border: 1px solid #ccc;
+        padding: 0 .15rem;
+        background: #fff
+        /* border: 1px solid #ccc; */
     }
-    .userList li input:focus{
-        border-color: #409eff
+
+    /deep/ .van-checkbox__icon--checked .van-icon {
+        background: #e50015;
+        border-color: #e50015;
     }
-    .title{
-        font-weight: bold;
-        font-size: .5rem
-    }
-    /deep/ .van-radio-group{
-        display: flex;
-        justify-content: space-around
-    }
-    /deep/ .van-button--primary{
-        width: 3rem;
-        height: 1.2rem;
-        line-height: 1.2rem;
-        margin-top: .6rem;
-        border-radius: 10%;
-        
+
+    .submit {
+        color: #fff;
+        background: #e50015;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
     }
 </style>

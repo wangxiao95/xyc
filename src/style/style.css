@@ -47,7 +47,7 @@
 .moreScreenList li .label{ padding: .15rem;width: 100%; display: block; overflow: hidden;}
 .moreScreenList li .label span{ margin: .15rem; display: inline-block; float: left; border: 1px solid #f5f5f5; border-radius: 4px; overflow: hidden; padding: .1rem .5rem; font-size: .36rem}
 .moreScreenList li .label span.active{ background: #e50015; color: #fff; border: 1px solid #e50015}
- .vipTip{width: 100%; display: block; overflow: hidden; background: #f5eff0; padding:.5rem .2rem; color: #666; text-align: center; font-size: .4rem}
+ .vipTip{width: 100%; display: block; overflow: hidden; background: #f5eff0; padding:.3rem .2rem; color: #666; text-align: center; font-size: .4rem}
 .vipTip a{ margin-right: .5rem; color: #e50015}
 /*登录*/
 .headerBg{ background: #e50015; border-bottom: 0}
@@ -100,7 +100,7 @@
 .companyTop .title span img{ width: 100%}
 .companyTop .title em{ vertical-align: middle; color: #fff; font-size: .5rem; font-weight: 400; max-width: 60%; display: inline-block; text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .companyTop .credit{ width: 100%; text-align: center; font-size: .34rem; color: #fff}
-.companyTop .claim{ position: absolute; right: .3rem; top: .4rem;text-align: right; width:20%}
+.companyTop .claim{ position: absolute; right: .3rem; top: .4rem;text-align: right;}
 .companyTop .claim span{ width:.6rem; display: inline-block;}
 .companyTop .claim span img{ width: 100%}
 .companyTop .claim .claimCon{color:#ffb5b3; font-size: .34rem; margin-bottom: .1rem}
@@ -197,8 +197,8 @@
 .indexUnveiled .Unveiledscroll{ left: 3.1rem;}
 .indexUnveiled .Unveiledscroll li { padding-right: .3rem}
 .indexUnveiled .Unveiledscroll li:after{ display: none}
-.indexUnveiled .Unveiledscroll li span{ display: inline-block; max-width: 70%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
-.indexUnveiled .Unveiledscroll li em{ float: right; color: #898989; font-size: .36rem; margin-top: .06rem}
+.indexUnveiled .Unveiledscroll li span{ display: inline-block;    margin-top:.12rem; max-width: 66%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.indexUnveiled .Unveiledscroll li em{ float: right; color: #898989; font-size: .36rem; margin-top: .12rem}
 
 .indexNav{ width: 100%; display: block; overflow: hidden; border: 1px solid #f3f3f3; background: #fff}
 .indexNav li{ width: 33.3%; border-right: 1px solid #f3f3f3; float: left; border-bottom: 1px solid #f3f3f3; text-align: center; height: 2.7rem;}
@@ -217,6 +217,8 @@
 .HeadlinesListItem .photo img{ width: 100%; display: block}
 @media screen and (min-width:412px) {
 .statisticsResult{ line-height: 1.15rem;}
+.indexUnveiled .Unveiledscroll li span{ margin-top:.06rem;}
+.indexUnveiled .Unveiledscroll li em{margin-top: .06rem}
 }
 @media screen and (min-width:414px) {
 .statisticsResult{ line-height: 1.1rem;}
@@ -228,7 +230,7 @@
 .statisticsResult2 { top: 1.5rem;}
 .searchListMargin2{margin-top: 2.3rem;}
 .creditLine { padding: .3rem .4rem .2rem;width: 100%; border-top: 1px solid #f5f5f5;}
-.creditBtton { background: #ff7e00;color: #fff; font-size: .4rem; width: 50%; margin: 0 auto .4rem auto; text-align: center;padding: .2rem; border-radius: 3px; }
+.creditBtton { background: #ff7e00;color: #fff; font-size: .44rem; width: 50%; margin: 0 auto .4rem auto; text-align: center;padding: .3rem; border-radius: 3px; }
 .creditBtton2 { font-size: .32rem; width: auto; margin: .26rem 0;padding: .1rem .2rem;}
 .credit .title{ line-height: 1.1rem; font-size:.46rem; font-weight: 400; color: #353535; display: inline-block; } 
 .credit .Add { display: inline-block; margin-left: 3%; color: #a6a6a6;}
@@ -288,14 +290,14 @@ input[type=checkbox]{
 
 
 .hotSearch{ width:100%;background: #fff; display: inline-block; float: left; border-top: 5px solid #f5f5f5;}
-.hotSearchTit{ padding: 3%; font-weight: normal; font-size: .42rem; color: #353535;position: relative; width: 100%; display: inline-block;border-bottom: 1px solid #f5f5f5;}
+.hotSearchTit{ padding: 3%; font-weight: normal;    float: left; font-size: .42rem; color: #353535;position: relative; width: 100%; display: inline-block;border-bottom: 1px solid #f5f5f5;}
 .hotSearchTit:before{ content: '\e60d'; color: #999; font-size: .4rem;position: absolute; right:0%; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); padding-right: .3rem;}
 .hotSearchTit em{font-size: .22rem; color: #999; margin-top: 2px;}
 .hotSearchList {display: inline-block; width: 100%; float: left; margin-top: 3%;}
 .hotSearchList a{ border: 1px solid #f5f5f5; border-radius: 3px; padding: .2rem .5rem; font-size: .36rem; color: #666;  min-width:70px; display: inline-block; text-align: center; float: left; margin:0 0 3% 3%}
 .hotSearchList a.active{ background: #cbcbcb;}
 .hotSearchHistory { width: 94%; margin: 0 3%; display: inline-block;}
-.hotSearchHistory a { display: inline-block; font-size: .36rem; color: #666; padding: .3rem 0 .2rem 0;border-bottom: 1px solid #f5f5f5; width: 100%; }
+.hotSearchHistory a { display: inline-block; font-size: .36rem; color: #666; padding: .3rem 0;border-bottom: 1px solid #f5f5f5; width: 100%; }
 .hotSearchHistory a:before { content: '\e63a'; color: #999; font-size: .4rem;-webkit-transform: translateY(-50%);transform: translateY(-50%); margin-right: .2rem;}
 
 /*gsf 2019-02-27*/
@@ -326,7 +328,7 @@ input[type=checkbox]{
 .spaceNoticeList li .title{ color: #343434; font-size: .42rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 .spaceNull{ background: #f7f7f7; width: 100%; display: none; color: #454545; font-size: .42rem; text-align: center; padding: .8rem 0}
 .spaceNullBg{ background: none}
-.spaceFoot{ position: fixed; bottom: 0; font-weight: 400; left: 0; width: 100%; background: #fff; color: #575757; border-top:1px solid #f5f5f5; text-align: center; padding: .4rem ;font-size: .44rem}
+.spaceFoot{ position: fixed; bottom: 0; font-weight: 400; left: 0; width: 100%; background: #fff; color: #575757; border-top:1px solid #f5f5f5; text-align: center; padding: .4rem ;font-size: .36rem}
 .spaceFoot:active{ color: #575757}
 /*免责声明*/
 .disclaimer{ padding: .4rem; line-height: .68rem; font-size: .42rem; color: #575757}
@@ -343,28 +345,28 @@ input[type=checkbox]{
 .shopInspectForm{ width: 100%; display: block; overflow: hidden;}
 .shopInspectForm li{ background: #fff; margin-bottom: .2rem; padding: .4rem; width: 100%; display: block; overflow: hidden; position: relative;}
 .shopInspectForm li .inName{ font-size: .44rem; float: left; color: #333;}
-.shopInspectForm li .inInput{ margin-bottom: 0; padding: 0; margin-top: .05rem; font-size: .44rem; font-family: inherit; font-weight: 300; width: 70%; text-align: right; float: right; height: inherit; border: none; line-height: inherit}
+.shopInspectForm li .inInput{ margin-bottom: 0; color: #666 !important; padding: 0; margin-top: .05rem; font-size: .44rem; font-family: inherit; font-weight: 300; width: 70%; text-align: right; float: right; height: inherit; border: none; line-height: inherit}
 .shopInspectForm li.ListAfter{ padding-right: .9rem}
 .shopInspectForm li.ListAfter::after{content: '';background: url(/static/images/icon-27.png) no-repeat;background-size: .4rem;width: .4rem;height: .4rem;position: absolute;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);right: .4rem;}
 .shopInspectFoot{ background: #e50015; color: #fff}
 .shopInspectFoot:active{ color: #fff}
 .inspectList{ width: 100%; display: block; overflow: hidden; padding: 0 .4rem; background: #fff}
 .inspectList li{ padding: .4rem 0; width: 100%; display: block; overflow: hidden;  border-bottom: 1px solid #f5f5f5; position: relative}
-.inspectList li .title{ font-size: .48rem; font-weight: 400; color: #333; margin-bottom: .15rem; width: 100%; display: inline-block}
-.inspectList li .label{ font-size: .44rem; color: #999; margin-top: .2rem; width: 100%; display: block; overflow: hidden; }
-.inspectList li .state{ position: absolute; right:0; top: .4rem; font-size: .44rem}
+.inspectList li .title{ font-size: .44rem; font-weight: 400; color: #333; margin-bottom: .15rem; width: 100%; display: inline-block}
+.inspectList li .label{ font-size: .4rem; color: #999; margin-top: .2rem; width: 100%; display: block; overflow: hidden; }
+.inspectList li .state{ position: absolute; right:0; top: .4rem; font-size: .4rem}
 .c-999{ color: #999;}
 .inspectList li:last-child{border: none}
 /*商品抽检详情*/
 .shopDetailsList,.shopDetailsList li{width: 100%; display: block; overflow: hidden; }
 .shopDetailsList li{ background: #fff; margin-bottom: .2rem}
-.shopDetailsList li .title{ padding: .4rem; font-size:.4rem; color: #999; border-bottom: 1px solid #f5f5f5}
-.shopDetailsList li .content{ font-size: .48rem; padding: .35rem .4rem; line-height: .68rem; color: #333}
+.shopDetailsList li .title{ padding: .4rem; font-size:.44rem; color: #999; border-bottom: 1px solid #f5f5f5}
+.shopDetailsList li .content{ font-size: .44rem; padding: .35rem .4rem; line-height: .68rem; color: #333}
 /*食品抽检*/
-.foodSearch{ width: 90%; margin: 10% 5%; padding: .4rem .4rem .42rem; background: #efefef; border-radius: 3px; overflow: hidden; position: relative;}
+.foodSearch{ width: 90%; margin:8% 5%;display: inline-block; padding: .4rem .4rem .42rem; background: #efefef; border-radius: 3px; overflow: hidden; position: relative;}
 .foodSearch .scan{ position: absolute; right:.4rem; top: 50%; width: .6rem; -webkit-transform: translateY(-50%);transform: translateY(-50%);}
 .foodSearch .scan img{ width: 100%; display: block}
-.foodSearch .foodSearchText{ margin-bottom: 0; float: left; background: none; height: .4rem; line-height: .4rem; padding: 0;font-size: .44rem; font-family: inherit; font-weight: 300; width: 70%; height: inherit; border: none; line-height: inherit}
+.foodSearch .foodSearchText{ margin-bottom: 0; float: left; background: none; height: .4rem; line-height: .4rem; padding: 0;font-size: .44rem; font-family: inherit; font-weight: 300; width: 90%; height: inherit; border: none; line-height: inherit}
 .foodSearchCon{width: 90%; margin: 0 5%; display: inline-block; overflow: hidden;}
 .foodSearchTitle{ font-size: .44rem; color: #333; font-weight: 400}
 .foodSearchLabel{width: 100%; display: block; overflow: hidden; margin-bottom: 10%}
@@ -376,10 +378,124 @@ input[type=checkbox]{
 .footDetailsList li{ background: #fff; margin-bottom: .2rem;  padding:.3rem .4rem; color: #999; font-size: .44rem; position: relative;}
 .footDetailsList li .state{ position: absolute; right:.4rem; top: 50%; width: 2rem; -webkit-transform: translateY(-50%);transform: translateY(-50%);}
 .footDetailsList li .label{line-height: .68rem;margin: .1rem 0}
+/*公共单位查询*/
+.screenHeadTwo .label{ width: 50%}
+.classiferLayer .moreScreenList{ height: inherit; background: #fff; padding-top: .2rem}
+.conTopSearch{ margin-top:2.5rem }
+.classiferLayer .searchLayer{ height: auto;}
+.foodSearch2{margin-bottom: 0}
+.foodSearch3{margin-top: 3%}
+.stateCheck{ width: 100%; display: inline-block; margin: 5% 0 10%}
+.stateCheck label{ width: 25%; float: left; position: relative; color: #333; padding-left: .6rem; font-size: .42rem}
+.stateCheck label i::before{ content:'\e9e9'; position: absolute; left: 0; top:50%; font-size: .46rem; -webkit-transform: translateY(-50%);transform: translateY(-50%); color: #ccc}
+.stateCheck label.active i::before{ content:'\e9ed'; color: #e50015}
+.stateCheck label.active{ color: #e50015}
+.publicUnitListTip{ position: fixed; top: 1.3rem; left: 0; width: 100%; height: 1.2rem; line-height: 1.2rem}
+.publicUnitListTip .scree{position: absolute;right: .4rem;top:50%;padding: .06rem .2rem .04rem; -webkit-transform: translateY(-50%);transform: translateY(-50%);color: #ff3d4e;font-size: .34rem;background: url(/static/images/g-07.png) no-repeat;background-size: 100% 100%;}
+.publicUnitListTop{ margin-top: 2.5rem !important}
+.publicUnitList::after,.publicUnitList::before{ display: none}
+.publicUnitList{ background: none !important}
+.publicUnitList li{ background: #fff; width: 100%; display: block; overflow: hidden; margin-bottom: .2rem}
+.publicUnitList li .title{ padding: .4rem; border-bottom: 1px solid #f5f5f5; width: 100%; display: block; overflow: hidden; font-size: .44rem;}
+.publicUnitList li .title span{ display: inline-block; width:70%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; float: left; color: #333}
+.publicUnitList li .title em{ float: right;}
+.c-ff7e00{ color: #ff7e00}
+.c-ff7e00{ color: #ff7e00}
+.publicUnitList li .label{ padding: .2rem .4rem; font-size: .4rem; color: #999999}
+.publicUnitList li .label em{ float: right; color: #666}
+.publicUnitList li .label .labelList{ margin: .2rem 0}
+.publicDetailsTitle{ font-size: .46rem; position: relative; font-weight: 400; color: #000; padding: .4rem; background: #fff; border-bottom: 1px solid #f5f5f5}
+.publicDetailsTitle::after{ content: '\e701'; position: absolute; right: .3rem; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); color: #999; font-size: .78rem}
+.publicDetailsTitle.active::after{content: '\e700';}
+.publicDetailsList{ display: none}
+.buttonBIgWidth{ width: 80%; margin: 5% 10%}
+.shopInspectForm li .inInput.wb50{ width: 50%}
+.breakList li .title em{  font-size: .4rem; margin-top: .06rem}
+.breakList li .title span{ width: 50%}
+
+/*系统设置*/
+.setTop{ width: 100%; display: block; padding: .5rem 0; overflow: hidden; background: #e50015; text-align: center}
+.setTop img{ width:1.4rem; margin-bottom: .2rem}
+.setTop p{ font-size: .44rem; color: #fff}
+.setList{ width: 100%; display: block; overflow: hidden;}
+.setList li{ background: #fff;width: 100%; display: block; overflow: hidden; margin-bottom: .2rem}
+.setList li a{ width: 100%; display: block; padding: .4rem; font-size: .44rem; color: #333; position: relative;}
+.setList li a:active{ color: #333}
+.setList li a::after{ content: '\e6ff';position: absolute; right: 0rem; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); color: #999; font-size: .78rem}
+.setList li a em{ position: absolute; font-size: .4rem; color: #999; right: .9rem; top: 52%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+/*意见反馈*/
+.feedbackTitle{width: 92%;margin: 4%;font-size: .42rem;color: #666;}
+.feedbackCon{width: 92%;margin: 0 4% 8%;box-shadow: 0px 0px 3px #eee;background: #fff;border-radius: 5px;overflow: hidden;padding: .35rem;font-size: .4rem;color: #999;}
+.feedbackCon textarea{border: none;margin: 0;padding: 0;height: 4rem;font-size: .4rem;color: #333;font-family: inherit;}
+/*发现新版本*/
+.editionLayer{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 500;}
+.editionLayerBg{ width: 100%; display: block; overflow: hidden; background: rgba(0,0,0,0.5); height: 100%;} 
+.editionLayerCon{ position: fixed; border-radius: 5px; overflow: hidden; top: 50%; left: 0; width: 80%; margin: 0 10%; background: #fff;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.editionLayerTop{ background: #fff; width: 100%; display: block; text-align: center;  padding:.8rem 0 .2rem}
+.editionLayerTop img{ width: 1.2rem}
+.editionLayerTop p{ font-size: .4rem; color: #e50015; margin-top: .2rem}
+.editionLayerContent{ padding: .4rem .5rem}
+.editionLayerContent h5{ font-size: .42rem; color: #666; margin-bottom: .3rem}
+.editionLayerContent p{ font-size: .4rem; color: #999; margin: .15rem 0}
+/*企业详情*/
+.detailsTop{ width: 100%; display: block; text-align: center; overflow: hidden; padding: .5rem 0; background: #fff}
+.detailsTop .logo{ width: .9rem; display: inline-block; vertical-align: middle; margin-right: .4rem}
+.detailsTop .logo img{ width: 100%; display: block}
+.detailsTop .name{ font-size: .44rem; font-weight:400; vertical-align: middle}
+.detailsList{ width: 100%; display: block; overflow: hidden;}
+.detailsList .detailsListItem{width: 100%; display: block; overflow: hidden; background: #fff; margin-bottom: .2rem}
+.detailsInfoTitle{ padding: .4rem; font-weight: 400; font-size: .44rem; color: #323232; position: relative;width: 100%; display: block; overflow: hidden;}
+.detailsInfoTitle::after{ content: '\e701'; position: absolute; right: .3rem; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); color: #999; font-size: .78rem}
+.detailsList .detailsListItem.active .detailsInfoTitle::after{content: '\e700';}
+.detailsInfo{border-top: 1px solid #f5f5f5; width: 100%; display: none; overflow: hidden; padding: .2rem 0}
+.detailsInfoList li{ width: 100%; display: block; overflow: hidden; float: left; padding:.2rem .4rem; position: relative;}
+.detailsInfoList li span{ color: #999; font-size: .42rem; display: block}
+.detailsInfoList li em{ margin-top: .05rem; font-size: .42rem; line-height: .64rem; display: block; color: #333}
+.detailsInfoList li em.c-0086ff{ color: #0086ff}
+.detailsInfoList li.widthTwo{ width: 50%}
+/*学历查询*/
+.educationList{ width: 100%; padding: 0 .4rem; margin-top: .5rem; display: inline-block; float: left; position: relative;}
+.educationList ul{ background: #fff; border-radius: 5px; padding:0 .4rem;overflow: hidden;}
+.educationList ul li{ margin-bottom: 0; padding:.4rem  0; border-bottom: 1px solid #f5f5f5; background: none}
+.educationList ul li:last-child{ border: none}
+.educationList .close{ position: absolute; top:-.25rem; right:.2rem; display: block; width: .7rem}
+.educationList .close img{ width: 100%}
+.educationFoot{ position: fixed; bottom: 0; left: 0; width: 100%; height: 1.5rem; background:#fff}
+.educationFoot a{ width:50%; float: left; text-align: center; line-height: 1.5rem;  font-size: .44rem; color: #e50015; font-weight: 400} 
+.educationFoot a i{ font-size: .36rem;margin-right: .2rem}
+.educationFoot a.bg-e50015{ background: #e50015; color: #fff}
+/*学历查询结果*/
+.educationResult{ width: 100%; display: inline-block; overflow: hidden;}
+.educationResult li{width: 100%; display: block; overflow: hidden; padding: .4rem 0;}
+.educationResult li.title{ background:#f4f4f4;padding: .3rem 0;}
+.educationResult li span,.educationResult li em{ width: 50%; float: left; text-align: center;}
+.educationResult li.title em{ color: #999}
+.educationResult li span{ color: #333}
+/*信用修复*/
+.headerBgNull{ background: none; border: none}
+.headerBgNull .headerIco,.headerBgNull .headTit{ color: #fff}
+.creditRepairBg{ position: absolute; top: 0; left: 0; width: 100%}
+.creditRepairCon{ position: relative; z-index: 20; width: 100%; display: block}
+.creditRepairTitle{ width: 50%; margin: 8% 25%}
+.creditRepair{ width: 90%; box-shadow: 0px 0px 5px #ccc; margin: 0 5%; background: #fff; border-radius: 5px; overflow: hidden; padding: .7rem .8rem}
+.creditRepair li{ width: 100%; min-height: .9rem; padding-bottom: 1.1rem; display: block; overflow: hidden; position: relative; padding-left: 1.6rem;}
+.creditRepair li .icoImg{width: 1rem; position: absolute; top:0; left: 0;}
+.creditRepair li .title{ font-weight: 400; font-size: .46rem; color: #333; line-height: 1rem}
+.creditRepair li::before{ content:''; position: absolute; left:.45rem; top: 0; bottom: 0; border-left: .1rem solid #e0e0e0}
+.creditRepair li:last-child::before{ display: none}
+.creditRepair li.active::before{border-left: .1rem solid #e50015}
+
+/*资讯详情*/
+.inforDetails{padding: .4rem;}
+.inforDetails .inforDetailsTitle{font-size: .52rem;font-weight: 400;color: #000;line-height: .74rem;margin-bottom: .3rem;}
+.inforDetails .inforDetailsTime{font-size: .36rem;color: #999;}
+.inforDetails .inforDetailsTime i{margin-right: .1rem;}
+.inforDetails .inforDetailsContent {margin-top: .5rem;font-size: .42rem;line-height: .76rem;color: #333;}
+.inforDetails .inforDetailsContent img{ width: 100%}
+
 @media screen and (min-width:412px) {
 .shopInspectForm li .inInput{ margin-top: 0}
 }
 @media screen and (min-width:414px) {
 
 }
-

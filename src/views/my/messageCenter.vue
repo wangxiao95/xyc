@@ -63,19 +63,18 @@
 		border-bottom: .3rem solid #fafafa
 	}
 	.HeadlinesList{
-		margin-top: 1.6rem;
+		margin-top: 1.5rem;
 	}
 	.companyLine{
 		
 		padding: .3rem .5rem;
-		border-bottom: .2rem solid #fafafa;
-		/* border-top: 1px solid #f00 */
 	}
+	.HeadlinesList li{ background: #fff; margin-bottom: .2rem}
 	.itemAll:first-child{
 		border-top: 1px solid #fafafa
 	}
 	.company{
-		font-weight: 700;
+		font-weight: 400;
 		font-size: .44rem;
 		color: #444;
     }
