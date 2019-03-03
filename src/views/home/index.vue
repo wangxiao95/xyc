@@ -150,7 +150,7 @@
 				
 			},
 			getData(){
-				this.$axios.post(`/solr//qst_entfind_djg/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				this.$axios.post(`qst_entfind_djg/select`,{params:{q: `ENTNAME:济南奥凯机械制造有限公司 PRIPID:0100200109608`,'indent':'true','wt':'json'}}).then(res=>{
 					console.log("qst_entfind_new",res)
 				})
 			}

@@ -3,8 +3,8 @@
 		<header class="mui-bar mui-bar-nav header">
 		    <a @click="$router.back()" class="iconfont headerIco headLeft">&#xe792;</a>
 		    <div class="headerSerach headerSerachCenter2">
-		        <input type="search" class="headerSerachText" placeholder="企业名称、信用代码、姓名等">
-		        <button class="headerSerachBtn" @click="$router.push('/search')"></button>
+		        <input type="search" class="headerSerachText" v-model="kw" placeholder="企业名称、信用代码、姓名等">
+		        <button class="headerSerachBtn" @click="$router.push({name: 'search', query: {kw: kw}})"></button>
 		    </div>
 		</header>
 		
@@ -31,6 +31,13 @@
 </template>
 
 <script>
+  export default {
+    data() {
+      return {
+        kw: '', //搜索关键字
+      }
+    }
+  }
 </script>
 
 <style>

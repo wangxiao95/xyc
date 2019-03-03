@@ -9,7 +9,7 @@
 			<a class="iconfont headerIco headRight headRightText">排序</a>
 		</header>
 		<div class="screenHead">
-			<span class="label provinces">
+			<span class="label provinces" @click="citySearch">
 				<em>省份地区</em>
 				<i class="iconfont">&#xe628;</i>
 			</span>
@@ -25,133 +25,133 @@
 		<!-- <van-popup v-model="moreSearch" position="bottom" :overlay="false">
   	
 		</van-popup> -->
-		<mt-popup v-model="moreSearch" position="top">
-			<header class="mui-bar mui-bar-nav header">
-				<a @click="$router.back()" class="iconfont headerIco headLeft">&#xe792;</a>
-				<div class="headerSerach headerSerachCenter" @click="$router.push('/searchList')">
-					<input type="search" @click="$router.push('/searchList')" class="headerSerachText" placeholder="腾讯科技">
-					<button class="headerSerachBtn"></button>
-				</div>
-				<a class="iconfont headerIco headRight headRightText">排序</a>
-			</header>
-			<div class="screenHead">
-				<span class="label provinces">
-					<em>省份地区</em>
-					<i class="iconfont">&#xe628;</i>
-				</span>
-				<span class="label guild">
-					<em>行业分类</em>
-					<i class="iconfont">&#xe628;</i>
-				</span>
-				<span class="label moreScreen" @click="search">
-					<em>更多筛选</em>
-					<i class="iconfont">&#xe628;</i>
-				</span>
-			</div>
-			<div class="searchLayer">
-				<ul class="moreScreenList">
-					<li>
-						<h5 class="title">企业状态：
-							<em class="arrow"></em>
-						</h5>
-						<div class="label">
-							<!-- :class="{active:item.checked}" -->
-							<span v-for="(status,index) in statusList" :key="index">{{status}}</span>
-						</div>
-					</li>
-					<li>
-						<h5 class="title">注册资本：
-							<em class="arrow"></em>
-						</h5>
-						<div class="label">
-							<span v-for="(money,moneyIndex) in moneyList" :key="moneyIndex">{{money}}</span>
-						</div>
-					</li>
-					<li>
-						<h5 class="title">成立年限：
-							<em class="arrow"></em>
-						</h5>
-						<div class="label">
-							<span v-for="(year,yearIndex) in yearList" :key="yearIndex">{{year}}</span>
+		<!--<mt-popup v-model="moreSearch" position="top">-->
+			<!--<header class="mui-bar mui-bar-nav header">-->
+				<!--<a @click="$router.back()" class="iconfont headerIco headLeft">&#xe792;</a>-->
+				<!--<div class="headerSerach headerSerachCenter" @click="$router.push('/searchList')">-->
+					<!--<input type="search" @click="$router.push('/searchList')" class="headerSerachText" placeholder="腾讯科技">-->
+					<!--<button class="headerSerachBtn"></button>-->
+				<!--</div>-->
+				<!--<a class="iconfont headerIco headRight headRightText">排序</a>-->
+			<!--</header>-->
+			<!--<div class="screenHead">-->
+				<!--<span class="label provinces" @click="citySearch">-->
+					<!--<em>省份地区</em>-->
+					<!--<i class="iconfont">&#xe628;</i>-->
+				<!--</span>-->
+				<!--<span class="label guild">-->
+					<!--<em>行业分类</em>-->
+					<!--<i class="iconfont">&#xe628;</i>-->
+				<!--</span>-->
+				<!--<span class="label moreScreen" @click="search">-->
+					<!--<em>更多筛选</em>-->
+					<!--<i class="iconfont">&#xe628;</i>-->
+				<!--</span>-->
+			<!--</div>-->
+			<!--<div class="searchLayer">-->
+				<!--<ul class="moreScreenList">-->
+					<!--<li>-->
+						<!--<h5 class="title">企业状态：-->
+							<!--<em class="arrow"></em>-->
+						<!--</h5>-->
+						<!--<div class="label">-->
+							<!--&lt;!&ndash; :class="{active:item.checked}" &ndash;&gt;-->
+							<!--<span v-for="(status,index) in statusList" :key="index">{{status}}</span>-->
+						<!--</div>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<h5 class="title">注册资本：-->
+							<!--<em class="arrow"></em>-->
+						<!--</h5>-->
+						<!--<div class="label">-->
+							<!--<span v-for="(money,moneyIndex) in moneyList" :key="moneyIndex">{{money}}</span>-->
+						<!--</div>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<h5 class="title">成立年限：-->
+							<!--<em class="arrow"></em>-->
+						<!--</h5>-->
+						<!--<div class="label">-->
+							<!--<span v-for="(year,yearIndex) in yearList" :key="yearIndex">{{year}}</span>-->
 
-						</div>
-					</li>
-					<li>
-						<h5 class="title">信用分：
-							<em class="arrow"></em>
-						</h5>
-						<div class="label">
-							<span v-for="(score,scoreIndex) in scoreList" :key="scoreIndex">{{score}}</span>
-						</div>
-					</li>
-					<div v-if="isVip">
-						<li>
-							<h5 class="title">税务信用等级(VIP 特权)：
-								<em class="arrow"></em>
-							</h5>
-							<div class="label">
-								<span v-for="(level,levelIndex) in levelList" :key="levelIndex">{{level}}</span>
-							</div>
-						</li>
-						<li>
-							<h5 class="title">联系电话(VIP 特权)：
-								<em class="arrow"></em>
-							</h5>
-							<div class="label">
-								<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>
-							</div>
-						</li>
-						<li>
-							<h5 class="title">联系邮箱(VIP 特权)：
-								<em class="arrow"></em>
-							</h5>
-							<div class="label">
-								<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>
-							</div>
-						</li>
-						<li>
-							<h5 class="title">商标信息(VIP 特权)：
-								<em class="arrow"></em>
-							</h5>
-							<div class="label">
-								<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>
+						<!--</div>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<h5 class="title">信用分：-->
+							<!--<em class="arrow"></em>-->
+						<!--</h5>-->
+						<!--<div class="label">-->
+							<!--<span v-for="(score,scoreIndex) in scoreList" :key="scoreIndex">{{score}}</span>-->
+						<!--</div>-->
+					<!--</li>-->
+					<!--<div v-if="isVip">-->
+						<!--<li>-->
+							<!--<h5 class="title">税务信用等级(VIP 特权)：-->
+								<!--<em class="arrow"></em>-->
+							<!--</h5>-->
+							<!--<div class="label">-->
+								<!--<span v-for="(level,levelIndex) in levelList" :key="levelIndex">{{level}}</span>-->
+							<!--</div>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<h5 class="title">联系电话(VIP 特权)：-->
+								<!--<em class="arrow"></em>-->
+							<!--</h5>-->
+							<!--<div class="label">-->
+								<!--<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>-->
+							<!--</div>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<h5 class="title">联系邮箱(VIP 特权)：-->
+								<!--<em class="arrow"></em>-->
+							<!--</h5>-->
+							<!--<div class="label">-->
+								<!--<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>-->
+							<!--</div>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<h5 class="title">商标信息(VIP 特权)：-->
+								<!--<em class="arrow"></em>-->
+							<!--</h5>-->
+							<!--<div class="label">-->
+								<!--<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>-->
 
-							</div>
-						</li>
-						<li>
-							<h5 class="title">专利信息(VIP 特权)：
-								<em class="arrow"></em>
-							</h5>
-							<div class="label">
-								<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>
-							</div>
-						</li>
-						<li>
-							<h5 class="title">著作权(VIP 特权)：
-								<em class="arrow"></em>
-							</h5>
-							<div class="label">
-								<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>
-							</div>
-						</li>
-						<li>
-							<h5 class="title">失信信息(VIP 特权)：
-								<em class="arrow"></em>
-							</h5>
-							<div class="label">
-								<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>
-							</div>
-						</li>
-					</div>
-				</ul>
-				<div class="vipTip">
-					<a href="javascript:;">开通VIP</a> 更多筛选特权</div>
-				<div class="buttonBIg buttonBIgTwo">
-					<a @click="remove" class="fl shallow" id="productBtn">重置</a>
-					<a @click="submit" class="fr" id="nodesBtn">确定</a>
-				</div>
-			</div>
-		</mt-popup>
+							<!--</div>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<h5 class="title">专利信息(VIP 特权)：-->
+								<!--<em class="arrow"></em>-->
+							<!--</h5>-->
+							<!--<div class="label">-->
+								<!--<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>-->
+							<!--</div>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<h5 class="title">著作权(VIP 特权)：-->
+								<!--<em class="arrow"></em>-->
+							<!--</h5>-->
+							<!--<div class="label">-->
+								<!--<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>-->
+							<!--</div>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<h5 class="title">失信信息(VIP 特权)：-->
+								<!--<em class="arrow"></em>-->
+							<!--</h5>-->
+							<!--<div class="label">-->
+								<!--<span v-for="(item,itemIndex) in ItemList" :key="itemIndex">{{item}}</span>-->
+							<!--</div>-->
+						<!--</li>-->
+					<!--</div>-->
+				<!--</ul>-->
+				<!--<div class="vipTip">-->
+					<!--<a href="javascript:;">开通VIP</a> 更多筛选特权</div>-->
+				<!--<div class="buttonBIg buttonBIgTwo">-->
+					<!--<a @click="remove" class="fl shallow" id="productBtn">重置</a>-->
+					<!--<a @click="submit" class="fr" id="nodesBtn">确定</a>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</mt-popup>-->
 		<div class="statisticsResult">为你找到
 			<i class="c-e70016">1258</i>家公司
 			<!--<a href="JavaScript:;" class="batch">批量导出</a>-->
@@ -193,12 +193,12 @@
 		<!-- 	<div id="searchList" class="mui-scroll-wrapper mui-active searchListMargin">
 		    <div class="">
 		        <ul class=" ">
-		
+
 		        </ul>
 		    </div>
 		</div> -->
 		<!--省份地区-->
-		<!-- <div class="searchLayerCon provincesLayer">
+		<div v-show="cityToggle" class="searchLayerCon provincesLayer">
 		    <div class="layerBack"></div>
 		    <div class="searchLayer">
 		        <div class="leftOne">
@@ -230,7 +230,7 @@
 		            </ul>
 		        </div>
 		    </div>
-		</div> -->
+		</div>
 		<!--end-->
 		<!--行业分类-->
 		<!-- <div class="searchLayerCon guildLayer">
@@ -278,6 +278,8 @@
 		},
 		data() {
 			return {
+			  kw: this.$route.query.kw, //搜索页面传的关键字
+        cityToggle: false,
 				pageList: [{
 					title: "腾讯科技（上海）有限公司",
 					label: "在业",
@@ -312,12 +314,15 @@
 
 			},
 			getData(){
-				this.$axios.post(`/solr/ENTERPRISEBASEINFOCOLLECT1/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				this.$axios.post(`qst_entfind_djg/select`,{params:{'q': `ENTNAME:${this.kw};`,'indent':'true','wt':'json'}}).then(res=>{
 				// this.$axios.post(`/solr/qst_entfind_djg/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
 					console.log("1",res)
 					this.pageList = res.response.docs
 				})
 			},
+      citySearch() {
+        this.cityToggle = !this.cityToggle;
+      },
 			search() {
 				this.moreSearch = !this.moreSearch
 				console.log("!11")
