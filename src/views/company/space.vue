@@ -33,7 +33,7 @@
 		        <h3 class="companyTitle">公司简介</h3>
 		        <div class="spaceDetailsCon">
 		            <p class="content">腾讯科技（上海）有限公司办公室地址位于中国大城市，魔都上海，上海 上海市徐汇区虹梅路1801号C区五层，于2008年07月23日在上海市工商行政管理局注册成立，注册资本为500万美元计..</p>
-		            <div class="spaceOpen">展开详情</div>
+		            <div class="spaceOpen" @click="$router.push('/companyDetail')">展开详情</div>
 		        </div>
 		        <div class="spaceNull spaceNullBg">暂无</div>
 		    </div>

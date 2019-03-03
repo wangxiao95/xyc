@@ -3,7 +3,9 @@ import * as Cookies from 'js-cookie'
 
 const env = process.env.NODE_ENV  //生产环境下  被设置为production  
                                   //开发环境下  被设置为development
-let baseURL = env == "development" ? "/api" :"/"
+let baseURL = env == "development" ?
+  "/api" :  //开发环境地址
+  "/"    //线上地址
   const instance = axios.create({
   baseURL,
   timeout:15000,

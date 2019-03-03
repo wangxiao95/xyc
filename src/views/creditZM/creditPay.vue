@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<Header></Header>
 		<div class="statisticsResult statisticsResult2 credit">
 			<h5 class="title">订单：小米科技公司报告PDF</h5>

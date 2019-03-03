@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<Header></Header>
 		 <section class="wb100 dis-ib conTop">
 		    <div class="disclaimer">

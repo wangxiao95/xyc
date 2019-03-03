@@ -230,7 +230,7 @@
 .statisticsResult2 { top: 1.5rem;}
 .searchListMargin2{margin-top: 2.3rem;}
 .creditLine { padding: .3rem .4rem .2rem;width: 100%; border-top: 1px solid #f5f5f5;}
-.creditBtton { background: #ff7e00;color: #fff; font-size: .44rem; width: 50%; margin: 0 auto .4rem auto; text-align: center;padding: .3rem; border-radius: 3px; }
+.creditBtton { background: #ff7e00;color: #fff; font-size: .44rem; width: 80%; margin: 0 auto .4rem auto; text-align: center;padding: .3rem; border-radius: 3px; }
 .creditBtton2 { font-size: .32rem; width: auto; margin: .26rem 0;padding: .1rem .2rem;}
 .credit .title{ line-height: 1.1rem; font-size:.46rem; font-weight: 400; color: #353535; display: inline-block; } 
 .credit .Add { display: inline-block; margin-left: 3%; color: #a6a6a6;}

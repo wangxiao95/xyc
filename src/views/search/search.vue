@@ -161,7 +161,7 @@
 				<div @click="$router.push('/company')">
 					<div class="searchListTop">
 					<div class="photo">
-						<img :src="item.img">
+						<img src="/static/images/logo/logo3.png">
 					</div>
 					<h5 class="title">{{item.ENTNAME}}</h5>
 					<div class="info" v-if="look">
@@ -312,8 +312,8 @@
 
 			},
 			getData(){
-				// this.$axios.post(`/solr/qst_entfind_new/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
-				this.$axios.post(`/solr/qst_entinfobypripid/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				this.$axios.post(`/solr/ENTERPRISEBASEINFOCOLLECT1/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				// this.$axios.post(`/solr/qst_entfind_djg/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
 					console.log("1",res)
 					this.pageList = res.response.docs
 				})

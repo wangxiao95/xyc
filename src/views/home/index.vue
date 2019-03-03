@@ -142,7 +142,7 @@
 				
 				],
 				loading:false,
-				name:"刘刚"
+				name:"刘刚121123"
 			}
 		},
 		methods:{

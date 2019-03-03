@@ -19,7 +19,7 @@
 							</span>
 						</div> -->
 						<div class="clearfix companyLine">
-							<span class="company fl">{{item}}</span><span class="cancle fr">取消关注</span>
+							<span class="company fl">{{item}}</span><span class="cancle fr">取消监控</span>
 						</div>
 					<!-- </a> -->
 				</li>
@@ -68,12 +68,12 @@
 		border-top: 1px solid #f3f5f7
 	}
 	.company{
-		font-size: .5rem;
-		font-weight: 400;
-		color: #333;
+		font-size: .44rem;
+		font-weight: 700;
+		color: #444;
 	}
 	.cancle{
-		font-size: .5rem;
-		color: #ccc;
+		font-size: .44rem;
+		color: #999;
 	}
 </style>
