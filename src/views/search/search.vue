@@ -1,5 +1,8 @@
 <template>
 	<div>
+    <div style="height: 3.6rem; width: 100%;">
+
+    </div>
 		<header class="mui-bar mui-bar-nav header">
 			<a @click="$router.back()" class="iconfont headerIco headLeft">&#xe792;</a>
 			<div class="headerSerach headerSerachCenter" @click="$router.push('/searchList')">
@@ -23,7 +26,7 @@
 			</span>
 		</div>
 		<!-- <van-popup v-model="moreSearch" position="bottom" :overlay="false">
-  	
+
 		</van-popup> -->
 		<mt-popup v-model="moreSearch" position="top">
 			<header class="mui-bar mui-bar-nav header">
@@ -156,47 +159,64 @@
 			<i class="c-e70016">1258</i>家公司
 			<!--<a href="JavaScript:;" class="batch">批量导出</a>-->
 		</div>
-		<div class="listBox" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading">
-			<div class="pageListBox" v-for="(item,index) in pageList" :key="index">
-				<div @click="$router.push('/company')">
-					<div class="searchListTop">
-					<div class="photo">
-						<img src="/static/images/logo/logo3.png">
-					</div>
-					<h5 class="title">{{item.ENTNAME}}</h5>
-					<div class="info" v-if="look">
-						<span>信用查认证</span>
-						<em>98分</em>
-					</div>
-					<span class="label">{{item.label}}</span>
-				</div>
-				<div class="searchListBottom">
+		<!--<div class="listBox" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10">-->
+    <!--<van-list-->
+      <!--v-model="loading"-->
+      <!--:finished="finished"-->
+      <!--finished-text="没有更多了"-->
+      <!--@load="loadMore"-->
+      <!--style="margin-top: 3.6rem;"-->
+    <!--&gt;-->
+    <div class="scroller-box" style="">
+      <!--:on-refresh="refresh"-->
+      <!--:on-infinite="infinite"-->
+      <scroller
+
+        ref="myscroller">
+        <div class="pageListBox" v-for="(item,index) in pageList" :key="index">
+          <div @click="$router.push('/company')">
+            <div class="searchListTop">
+              <div class="photo">
+                <img src="/static/images/logo/logo3.png">
+              </div>
+              <h5 class="title">{{item.ENTNAME}}</h5>
+              <div class="info" v-if="look">
+                <span>信用查认证</span>
+                <em>98分</em>
+              </div>
+              <span class="label">{{item.label}}</span>
+            </div>
+            <div class="searchListBottom">
 					<span class="labelList">
 						<em>法定代表人</em>
 						<i class="c-e70016" v-if="item.NAME">{{item.NAME}}</i>
 						<i v-else>---</i>
 					</span>
-					<span class="labelList">
+              <span class="labelList">
 						<em>注册资本</em>
 						<i v-if="item.REGCAP">{{item.REGCAP}}</i>
 						<i v-else>---</i>
 					</span>
-					<span class="labelList">
+              <span class="labelList">
 						<em>成立日期</em>
 						<i v-if="item.REGCAP">{{item.ESDATE}}</i>
 						<i v-else>---</i>
 					</span>
-				</div>
-				</div>
-			</div>
-		</div>
-		<!-- 	<div id="searchList" class="mui-scroll-wrapper mui-active searchListMargin">
-		    <div class="">
-		        <ul class=" ">
-		
-		        </ul>
-		    </div>
-		</div> -->
+            </div>
+          </div>
+        </div>
+        <!--</van-list>-->
+
+      </scroller>
+
+    </div>
+    <!--<div id="searchList" class="mui-scroll-wrapper mui-active searchListMargin">-->
+      <!--<div class="">-->
+          <!--<ul class=" ">-->
+
+          <!--</ul>-->
+      <!--</div>-->
+  <!--</div> -->
 		<!--省份地区-->
 		<!-- <div class="searchLayerCon provincesLayer">
 		    <div class="layerBack"></div>
@@ -270,30 +290,72 @@
 
 <script>
 	import Header from "@/components/Header.vue";
-	import { Popup } from 'mint-ui';
+	import { Popup, InfiniteScroll, loading } from 'mint-ui';
+	import Vue from 'vue'
+  import vueScroller from 'vue-scroller'
+  Vue.use(vueScroller)
+  import $ from 'jquery'
+  window.$ = $;
+
 	// import { Popup } from 'vant';
+  import { city } from './city.js'
 	export default {
 		components: {
 			Header
 		},
 		data() {
 			return {
-				pageList: [{
-					title: "腾讯科技（上海）有限公司",
-					label: "在业",
-					low1: "奚丹",
-					low2: "500万美元",
-					low3: "2008-07-23",
-					img: "/static/images/logo/logo-1.png"
-				},
-				{
-					title: "腾讯科技（上海）有限公司",
-					label: "在业",
-					low1: "奚丹",
-					low2: "500万美元",
-					low3: "2008-07-23",
-					img: "/static/images/logo/logo-1.png"
-				},
+        loading: false,
+        finished: false,
+				pageList: [
+				  {
+            title: "腾讯科技（上海）有限公司",
+            label: "在业",
+            low1: "奚丹",
+            low2: "500万美元",
+            low3: "2008-07-23",
+            img: "/static/images/logo/logo-1.png"
+          },
+          {
+            title: "腾讯科技（上海）有限公司",
+            label: "在业",
+            low1: "奚丹",
+            low2: "500万美元",
+            low3: "2008-07-23",
+            img: "/static/images/logo/logo-1.png"
+          },
+          {
+            title: "腾讯科技（上海）有限公司",
+            label: "在业",
+            low1: "奚丹",
+            low2: "500万美元",
+            low3: "2008-07-23",
+            img: "/static/images/logo/logo-1.png"
+          },
+          {
+            title: "腾讯科技（上海）有限公司",
+            label: "在业",
+            low1: "奚丹",
+            low2: "500万美元",
+            low3: "2008-07-23",
+            img: "/static/images/logo/logo-1.png"
+          },
+          {
+            title: "腾讯科技（上海）有限公司",
+            label: "在业",
+            low1: "奚丹",
+            low2: "500万美元",
+            low3: "2008-07-23",
+            img: "/static/images/logo/logo-1.png"
+          },
+          {
+            title: "腾讯科技（上海）有限公司",
+            label: "在业",
+            low1: "奚丹",
+            low2: "500万美元",
+            low3: "2008-07-23",
+            img: "/static/images/logo/logo-1.png"
+          }
 				],
 				statusList: ["不限", "在营", "吊销", "迁出"],
 				moneyList: ["不限", "0-100万", "100-200万", "500-1000万", "200-500万", "1000万以上"],
@@ -307,13 +369,22 @@
 				look:true
 			}
 		},
+    computed: {
+      allSearchHistory () {
+          let arr = [];
+          for (let item in this.searchHistory) {
+            arr = arr.concat(this.searchHistory[item])
+          }
+          return arr;
+      }
+    },
 		methods: {
 			loadMore() {
-
-			},
+        this.loading = true;
+      },
 			getData(){
-				this.$axios.post(`/solr/ENTERPRISEBASEINFOCOLLECT1/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
-				// this.$axios.post(`/solr/qst_entfind_djg/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				// this.$axios.post(`/solr/ENTERPRISEBASEINFOCOLLECT1/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				this.$axios.post(`/solr/qst_entfind_djg/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
 					console.log("1",res)
 					this.pageList = res.response.docs
 				})
@@ -330,12 +401,20 @@
 			}
 		},
 		created() {
-			this.getData()
-		}
+			this.getData();
+      console.log(this.allSearchHistory);
+    },
+    mounted() {
+		  let height = $(window).height();
+		  let fontSize = parseFloat($('html')[0].style.fontSize);
+      this.$set({
+        scrollerHeight: height - fontSize * 3.6
+      })
+    }
 	}
 </script>
 
-<style scoped>
+<style scoped lang="">
 	.listBox {
 		margin-top: 3.6rem;
 	}
@@ -352,4 +431,8 @@
     margin-bottom: .2rem;
     overflow: hidden;
 	}
+  .scroller-box{
+    position: relative;
+    width: 100%;
+  }
 </style>
