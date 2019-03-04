@@ -24,25 +24,25 @@
             </script> -->
 			</div>
 			<ul class="indexNav">
-				<li>
+				<li @click="$router.push({name: 'searchList', query: {type: 'GS'}})">
 					<a href="javascript:;">
 						<img src="/static/images/icon-43.png">
 						<p>工商企业</p>
 					</a>
 				</li>
-				<li>
+				<li @click="$router.push({name: 'searchList', query: {type: 'GJ'}})">
 					<a href="javascript:;">
 						<img src="/static/images/icon-44.png">
 						<p>国家机关</p>
 					</a>
 				</li>
-				<li>
+				<li @click="$router.push({name: 'searchList', query: {type: 'SY'}})">
 					<a href="javascript:;">
 						<img src="/static/images/icon-45.png">
 						<p>事业单位</p>
 					</a>
 				</li>
-				<li>
+				<li @click="$router.push({name: 'searchList', query: {type: 'SH'}})">
 					<a href="javascript:;">
 						<img src="/static/images/icon-46.png">
 						<p>社会团队</p>
@@ -139,7 +139,7 @@
 					lookNum: "168",
 					img: "/static/images/pic-3.jpg"
 				},
-				
+
 				],
 				loading:false,
 				name:"刘刚121123"
@@ -147,7 +147,7 @@
 		},
 		methods:{
 			loadMore(){
-				
+
 			},
 			getData(){
 				this.$axios.post(`qst_entfind_djg/select`,{params:{q: `ENTNAME:济南奥凯机械制造有限公司 PRIPID:0100200109608`,'indent':'true','wt':'json'}}).then(res=>{

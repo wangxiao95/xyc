@@ -23,7 +23,7 @@
 			</span>
 		</div>
 		<!-- <van-popup v-model="moreSearch" position="bottom" :overlay="false">
-  	
+
 		</van-popup> -->
 		<!--<mt-popup v-model="moreSearch" position="top">-->
 			<!--<header class="mui-bar mui-bar-nav header">-->
@@ -156,47 +156,64 @@
 			<i class="c-e70016">1258</i>家公司
 			<!--<a href="JavaScript:;" class="batch">批量导出</a>-->
 		</div>
-		<div class="listBox" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading">
-			<div class="pageListBox" v-for="(item,index) in pageList" :key="index">
-				<div @click="$router.push('/company')">
-					<div class="searchListTop">
-					<div class="photo">
-						<img src="/static/images/logo/logo3.png">
-					</div>
-					<h5 class="title">{{item.ENTNAME}}</h5>
-					<div class="info" v-if="look">
-						<span>信用查认证</span>
-						<em>98分</em>
-					</div>
-					<span class="label">{{item.label}}</span>
-				</div>
-				<div class="searchListBottom">
+		<!--<div class="listBox" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10">-->
+    <!--<van-list-->
+      <!--v-model="loading"-->
+      <!--:finished="finished"-->
+      <!--finished-text="没有更多了"-->
+      <!--@load="loadMore"-->
+      <!--style="margin-top: 3.6rem;"-->
+    <!--&gt;-->
+    <div class="scroller-box" style="">
+      <!--:on-refresh="refresh"-->
+      <!--:on-infinite="infinite"-->
+      <scroller
+
+        ref="myscroller">
+        <div class="pageListBox" v-for="(item,index) in pageList" :key="index">
+          <div @click="$router.push('/company')">
+            <div class="searchListTop">
+              <div class="photo">
+                <img src="/static/images/logo/logo3.png">
+              </div>
+              <h5 class="title">{{item.ENTNAME}}</h5>
+              <div class="info" v-if="look">
+                <span>信用查认证</span>
+                <em>98分</em>
+              </div>
+              <span class="label">{{item.label}}</span>
+            </div>
+            <div class="searchListBottom">
 					<span class="labelList">
 						<em>法定代表人</em>
 						<i class="c-e70016" v-if="item.NAME">{{item.NAME}}</i>
 						<i v-else>---</i>
 					</span>
-					<span class="labelList">
+              <span class="labelList">
 						<em>注册资本</em>
 						<i v-if="item.REGCAP">{{item.REGCAP}}</i>
 						<i v-else>---</i>
 					</span>
-					<span class="labelList">
+              <span class="labelList">
 						<em>成立日期</em>
 						<i v-if="item.REGCAP">{{item.ESDATE}}</i>
 						<i v-else>---</i>
 					</span>
-				</div>
-				</div>
-			</div>
-		</div>
-		<!-- 	<div id="searchList" class="mui-scroll-wrapper mui-active searchListMargin">
-		    <div class="">
-		        <ul class=" ">
+            </div>
+          </div>
+        </div>
+        <!--</van-list>-->
 
-		        </ul>
-		    </div>
-		</div> -->
+      </scroller>
+
+    </div>
+    <!--<div id="searchList" class="mui-scroll-wrapper mui-active searchListMargin">-->
+      <!--<div class="">-->
+          <!--<ul class=" ">-->
+
+          <!--</ul>-->
+      <!--</div>-->
+  <!--</div> -->
 		<!--省份地区-->
 		<div v-show="cityToggle" class="searchLayerCon provincesLayer">
 		    <div class="layerBack"></div>
@@ -270,8 +287,15 @@
 
 <script>
 	import Header from "@/components/Header.vue";
-	import { Popup } from 'mint-ui';
+	import { Popup, InfiniteScroll, loading } from 'mint-ui';
+	import Vue from 'vue'
+  import vueScroller from 'vue-scroller'
+  Vue.use(vueScroller)
+  import $ from 'jquery'
+  window.$ = $;
+
 	// import { Popup } from 'vant';
+  import { city } from './city.js'
 	export default {
 		components: {
 			Header
@@ -311,11 +335,11 @@
 		},
 		methods: {
 			loadMore() {
-
-			},
+        this.loading = true;
+      },
 			getData(){
-				this.$axios.post(`qst_entfind_djg/select`,{params:{'q': `ENTNAME:${this.kw};`,'indent':'true','wt':'json'}}).then(res=>{
-				// this.$axios.post(`/solr/qst_entfind_djg/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				// this.$axios.post(`/solr/ENTERPRISEBASEINFOCOLLECT1/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				this.$axios.post(`/solr/qst_entfind_djg/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
 					console.log("1",res)
 					this.pageList = res.response.docs
 				})
@@ -335,8 +359,16 @@
 			}
 		},
 		created() {
-			this.getData()
-		}
+			this.getData();
+      console.log(this.allSearchHistory);
+    },
+    mounted() {
+		  let height = $(window).height();
+		  let fontSize = parseFloat($('html')[0].style.fontSize);
+      this.$set({
+        scrollerHeight: height - fontSize * 3.6
+      })
+    }
 	}
 </script>
 
@@ -357,4 +389,8 @@
     margin-bottom: .2rem;
     overflow: hidden;
 	}
+  .scroller-box{
+    position: relative;
+    width: 100%;
+  }
 </style>
