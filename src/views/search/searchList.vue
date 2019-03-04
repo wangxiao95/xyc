@@ -34,6 +34,7 @@
   export default {
     data() {
       return {
+        kw: '', //搜索关键字
         //搜索历史
         searchHistory: [
           {text: 'test工商', type: 'GS'},
@@ -42,13 +43,6 @@
           {text: 'test社会', type: 'SH'},
         ],
         searchType: this.$route.query.type
-      }
-    }
-  }
-  export default {
-    data() {
-      return {
-        kw: '', //搜索关键字
       }
     }
   }

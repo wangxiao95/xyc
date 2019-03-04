@@ -6,7 +6,7 @@
         <h1 class="mui-title headTit headTitLabel">
             <a href="javascript:;" class="acticve" @click="$router.push('/company')">企业</a>
             <img src="/static/images/icon-25.png">
-            <a href="javascript:;" @click="$router.push('/space')">空间</a>
+            <a href="javascript:;" @click="$router.push({name: 'space', params: allData})">空间</a>
         </h1>
         <a class="iconfont headerIco headRight headRightImg" href="javascript:;"><img src="/static/images/icon-21.png"></a>
     </header>
@@ -16,9 +16,9 @@
             <div class="content">
                 <div class="title">
                     <span><img src="/static/images/logo/logo.png"></span>
-                    <em>腾讯科技（上海）有限公司</em>
+                    <em>{{allData.ENTNAME}}</em>
                 </div>
-                <p class="credit ">社会信用码 010111852364152</p>
+                <p class="credit ">社会信用码 {{allData.PRIPID}}</p>
                 <div class="claim">
                     <span><img src="/static/images/icon-1.png"></span>
                     <p class="claimCon">认领</p>
@@ -43,11 +43,11 @@
             </span>
             <span class="labelList">
                 <em>注册资本</em>
-                <i>500万美元</i>
+                <i>{{allData.REGCAP}}</i>
             </span>
             <span class="labelList">
                 <em>成立日期</em>
-                <i>2008-07-23</i>
+                <i>{{allData.ESDATE}}</i>
             </span>
         </div>
         <div class="companyRisk">
@@ -333,18 +333,50 @@
 </template>
 
 <script>
-    import Header from "@/components/Header"
+  import Header from "@/components/Header"
 	import Footer from "@/components/Footer1.vue"
 	export default {
 		components: {
-            Header,
+      Header,
 			Footer
 		},
 		data() {
-			return {}
+			return {
+        ENTNAME: this.$route.query.ENTNAME, //企业名称
+        PRIPID: this.$route.query.PRIPID, //企业PRIPID
+        allData: {}, //企业全部信息
+      }
 		},
-		methods:{},
-		created(){}
+		methods:{
+		  getBaseData() {
+        this.$axios.post(
+          `qst_entinfobypripid/select`,
+          {params:
+              {'q': `ENTNAME: ${this.ENTNAME}`,
+                'indent':'true',
+                'wt':'json'
+              }
+          }).then(res=>{
+          this.allData = Object.assign({}, this.allData,  res.response.docs[0])
+        })
+      },
+      getPerson() {
+        this.$axios.post(
+          `qst_epripersonbypripid/select`,
+          {params:
+              {'q': `PRIPID: ${this.PRIPID}`,
+                'indent':'true',
+                'wt':'json'
+              }
+          }).then(res=>{
+          this.allData = Object.assign({}, this.allData,  res.response.docs[0])
+        })
+      }
+    },
+		created(){
+      this.getBaseData();
+      this.getPerson();
+    }
 	}
 </script>
 

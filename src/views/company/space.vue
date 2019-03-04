@@ -17,7 +17,7 @@
 					<div class="tc mtb5"><img class="spacelogo" src="/static/images/logo/logo.png"></div>
 		            <div class="title">
 		                
-		                <em>腾讯科技（上海）有限公司</em>
+		                <em>{{allData.ENTNAME}}</em>
 		            </div>
 		            <div class="claim" v-if="isA">
 		                <span><img src="/static/images/icon-1.png"></span>
@@ -39,16 +39,16 @@
 		    </div>
 		    <ul class="spaceDetailsList">
 		        <li>
-		            <img src="/static/images/icon-22.png">010-88887766
+		            <img src="/static/images/icon-22.png">{{allData.TEL}}
 		        </li>
 		        <li>
-		            <img src="/static/images/icon-23.png">slkdjf@qq.com
+		            <img src="/static/images/icon-23.png">{{allData.EMAIL}}
 		        </li>
 		        <li>
 		            <img src="/static/images/g-01.png">www.baidu.com
 		        </li>
 		        <li>
-		            <img src="/static/images/icon-24.png">北京市海淀区大钟寺路CC大厦D栋7-1-2202
+		            <img src="/static/images/icon-24.png">{{allData.DOM}}
 		        </li>
 		    </ul>
 		    <div class="companyWrap spaceDetails mt2">
@@ -123,7 +123,8 @@
 		},
 		data() {
 			return {
-				isA:false
+				isA:false,
+        allData: this.$route.params,  //全部企业信息
 			}
 		},
 		methods: {},
