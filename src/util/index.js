@@ -1,18 +1,18 @@
 import axios from "axios"
 import * as Cookies from 'js-cookie'
 
-const env = process.env.NODE_ENV  //生产环境下  被设置为production  
+const env = process.env.NODE_ENV  //生产环境下  被设置为production
                                   //开发环境下  被设置为development
 let baseURL = env == "development" ?
-  "http://124.193.149.90:8086/solr/" :  //开发环境地址
-  "/"    //线上地址
+  "/api/solr/" :  //开发环境地址
+  "http://124.193.149.90:8086/solr/"    //线上地址
   const instance = axios.create({
   baseURL,
   timeout:15000,
   // headers:{"Access-Control-Allow-Origin":*}
 })
 
-// instance.interceptors.request.use( 
+// instance.interceptors.request.use(
 //     config => {
 //       let userKey = Cookies.get("userKey")
 //       if (userKey) {  // 判断是否存在userKey，如果存在的话，则每个http header都加上userKey
@@ -24,7 +24,7 @@ let baseURL = env == "development" ?
 //         return Promise.reject(error );
 //     }
 //   )
-  
+
 const xhr = {
     fetch(url,data,config,methods){
         return new Promise((resolve,reject)=>{

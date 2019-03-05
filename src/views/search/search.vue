@@ -164,7 +164,7 @@
 
         ref="myscroller">
         <div class="pageListBox" v-for="(item,index) in pageList" :key="index">
-          <div @click="$router.push({name: 'company', query:{ENTNAME: item.ENTNAME, PRIPID: item.PRIPID}})">
+          <div @click="$router.push({name: 'company', params: item})">
             <div class="searchListTop">
               <div class="photo">
                 <img src="/static/images/logo/logo3.png">
@@ -320,7 +320,7 @@
         })
       },
 			getData(fn){
-				this.$axios.post(`ENTERPRISEBASEINFOCOLLECT1/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
+				this.$axios.post(`qst_entfind_djg/select`,{params:{'q': `ENTNAME:${this.kw}`,'indent':'true','wt':'json'}}).then(res=>{
 				// this.$axios.post(`/solr/qst_entfind_djg/select`,{params:{'q':'*','indent':'true','wt':'json'}}).then(res=>{
           fn && fn(res);
 				})

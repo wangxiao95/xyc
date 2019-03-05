@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="companyIhfo">
-            <span class="name"><em>简介：腾讯科技（上海）有限公司成立于</em><a @click="$router.push('/companyDetail')">详情</a></span>
+            <span class="name"><em>{{allData.OPSCOPE}}</em><a @click="$router.push('/companyDetail')">详情</a></span>
             <a href="javascript:;" class="label"><img src="/static/images/icon-24.png"></a>
             <a href="javascript:;" class="label"><img src="/static/images/icon-23.png"></a>
             <a href="javascript:;" class="label"><img src="/static/images/icon-22.png"></a>
@@ -39,7 +39,7 @@
         <div class="searchListBottom companyReg">
             <span class="labelList">
                 <em>法定代表人</em>
-                <i class="c-e70016">奚丹</i>
+                <i class="c-e70016">{{allData.NAME}}</i>
             </span>
             <span class="labelList">
                 <em>注册资本</em>
@@ -374,6 +374,7 @@
       }
     },
 		created(){
+      this.allData = Object.assign({}, this.allData,  this.$route.params)
       this.getBaseData();
       this.getPerson();
     }
@@ -381,5 +382,5 @@
 </script>
 
 <style scoped>
-	
+
 </style>
