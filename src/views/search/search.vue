@@ -196,14 +196,14 @@
 
 			</scroller>
 
-		</div>
-		<!--<div id="searchList" class="mui-scroll-wrapper mui-active searchListMargin">-->
-		<!--<div class="">-->
-		<!--<ul class=" ">-->
+    </div>
+    <!--<div id="searchList" class="mui-scroll-wrapper mui-active searchListMargin">-->
+      <!--<div class="">-->
+          <!--<ul class=" ">-->
 
-		<!--</ul>-->
-		<!--</div>-->
-		<!--</div> -->
+          <!--</ul>-->
+      <!--</div>-->
+  <!--</div> -->
 		<!--省份地区-->
 		<div v-show="cityToggle" class="searchLayerCon provincesLayer">
 			<div class="layerBack"></div>
@@ -276,43 +276,43 @@
 		},
 		data() {
 			return {
-				cityData: city, //城市级联数据
-				kw: this.$route.query.kw, //搜索页面传的关键字
-				cityToggle: false,
-				scrollerHeight: 0, //scroller高度
-				province: [],
-				city: [],
-				area: [],
-				selectedprovince: '',
-				selectedcity: '',
-				selectedarea: '',
-				pageList: [{
-					title: "腾讯科技（上海）有限公司",
-					label: "在业",
-					low1: "奚丹",
-					low2: "500万美元",
-					low3: "2008-07-23",
-					img: "/static/images/logo/logo-1.png"
-				}, ],
-				statusList: ["不限", "在营", "吊销", "迁出"],
-				moneyList: ["不限", "0-100万", "100-200万", "500-1000万", "200-500万", "1000万以上"],
-				yearList: ["不限", "1年内", "1-5年", "15年以上"],
-				scoreList: ["不限", "60分以下", "60-70分", "85分以上"],
-				levelList: ["不限", "A", "B", "M", "C", "D"],
-				ItemList: ["不限", "有", "无"],
-				loading: false,
-				moreSearch: false,
-				isVip: false,
-				look: true
+              cityData: city, //城市级联数据
+              kw: this.$route.query.kw, //搜索页面传的关键字
+              cityToggle: false,
+              scrollerHeight: 0, //scroller高度
+              province: [],
+              city: [],
+              area: [],
+              selectedprovince: '',
+              selectedcity: '',
+              selectedarea: '',
+              pageList: [{
+                  title: "腾讯科技（上海）有限公司",
+                  label: "在业",
+                  low1: "奚丹",
+                  low2: "500万美元",
+                  low3: "2008-07-23",
+                  img: "/static/images/logo/logo-1.png"
+              }, ],
+              statusList: ["不限", "在营", "吊销", "迁出"],
+              moneyList: ["不限", "0-100万", "100-200万", "500-1000万", "200-500万", "1000万以上"],
+              yearList: ["不限", "1年内", "1-5年", "15年以上"],
+              scoreList: ["不限", "60分以下", "60-70分", "85分以上"],
+              levelList: ["不限", "A", "B", "M", "C", "D"],
+              ItemList: ["不限", "有", "无"],
+              loading: false,
+              moreSearch: false,
+              isVip: false,
+              look:true
 			}
 		},
-		computed: {
-			scrollerStyle() {
-				return {
-					height: `${this.scrollerHeight}px`
-				};
-			}
-		},
+    computed: {
+      scrollerStyle() {
+        return {
+          height: `${this.scrollerHeight}px`
+        };
+      }
+    },
 		methods: {
 			loadMore() {
 				this.loading = true;
@@ -333,9 +333,9 @@
 					fn && fn(res);
 				})
 			},
-			citySearch() {
-				this.cityToggle = !this.cityToggle;
-			},
+      citySearch() {
+        this.cityToggle = !this.cityToggle;
+      },
 			search() {
 				this.moreSearch = !this.moreSearch
 				console.log("!11")
@@ -346,22 +346,22 @@
 			submit() {
 				this.moreSearch = false
 			},
-			selectCity(type, obj, text) {
-				console.log(type, obj, text)
-				this[type] = obj;
-				this[`selected${type}`] = text;
-			},
+      selectCity(type, obj, text) {
+        console.log(type, obj, text)
+        this[type] = obj;
+        this[`selected${type}`] = text;
+      },
 		},
 		created() {
 			this.getData((res) => {
-				this.pageList = res.response.docs
-			});
-		},
-		mounted() {
-			let height = $(window).height();
-			let fontSize = parseFloat($('html')[0].style.fontSize);
-			this.scrollerHeight = height - fontSize * 3.6
-		}
+        this.pageList = res.response.docs
+      });
+    },
+    mounted() {
+		  let height = $(window).height();
+		  let fontSize = parseFloat($('html')[0].style.fontSize);
+      this.scrollerHeight = height - fontSize * 3.6
+    }
 	}
 </script>
 
@@ -374,19 +374,17 @@
 		width: 100%;
 		height: 10rem;
 	}
-
-	.pageListBox {
+	.pageListBox{
 		/* border-bottom: .2rem solid #f3f5f7 */
-		width: 100%;
-		display: block;
-		background: #fff;
-		margin-bottom: .2rem;
-		overflow: hidden;
+		    width: 100%;
+    display: block;
+    background: #fff;
+    margin-bottom: .2rem;
+    overflow: hidden;
 	}
-
-	.scroller-box {
-		position: relative;
-		width: 100%;
-		top: 3.6rem;
-	}
+  .scroller-box{
+    position: relative;
+    width: 100%;
+    top: 3.6rem;
+  }
 </style>

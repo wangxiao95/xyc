@@ -375,7 +375,6 @@
     },
 		created(){
       this.allData = Object.assign({}, this.allData,  this.$route.params)
-
       this.getBaseData();
       this.getPerson();
     }
