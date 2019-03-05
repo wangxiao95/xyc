@@ -4,22 +4,22 @@
         <img src="/static/images/icon-35.png" class="logo">
         <div class="marginTop">
             <div class="userList">
-                <ul :model="formData">
+                <ul>
                     <li class="clearfix">
                         <span class="fl">姓名：</span>
-                        <input class="fr tr" type="text" placeholder="" v-model="formData.company">
+                        <input class="fr tr" type="text" placeholder="请输入姓名">
                     </li>
                     <li class="clearfix">
                         <span class="fl">身份证号：</span>
-                        <input class="fr tr" type="text" placeholder="" v-model="formData.company">
+                        <input class="fr tr" type="text" placeholder="请输入身份证号">
                     </li>
                     <li class="clearfix">
                         <span class="fl">手机号：</span>
-                        <input class="fr tr" type="text" placeholder="" v-model="formData.company">
+                        <input class="fr tr" type="text" placeholder="请输入手机号">
                     </li>
                     <li class="clearfix">
                         <span class="fl">证书编号：</span>
-                        <input class="fr tr" type="text" placeholder="" v-model="formData.company">
+                        <input class="fr tr" type="text" placeholder="请输入证书编号">
                     </li>
                     
                 </ul>

@@ -4,7 +4,26 @@
 		<div class="marginTop">
 			<van-tabs type="card">
 				<van-tab title="个人信用">
-					<img src="/static/images/myCredit.png" alt="" class="myCredit">
+					<!-- <img src="/static/images/myCredit.png" alt="" class="myCredit"> -->
+					<div class="companyTop">
+						<img src="/static/images/bg-01.jpg" class="wb100 fl">
+						<div class="content">
+							<div class="title">
+								<span><img src="/static/images/logo/logo.png"></span>
+								<em>腾讯科技（上海）有限公司</em>
+							</div>
+							<p class="credited ">社会信用码 010111852364152</p>
+							<div class="claim">
+								<span><img src="/static/images/icon-1.png"></span>
+								<p class="claimCon">认领</p>
+								<p class="claimnumber">浏览量 3万+</p>
+							</div>
+							<div class="number">
+								<img src="/static/images/bg-02.png">
+								<em>98</em>
+							</div>
+						</div>
+					</div>
 					<div class="desc">完成下列任务，提高个人信用分</div>
 					<ul>
 						<li class="creditItem clearfix">
@@ -19,7 +38,7 @@
 							</div>
 						</li>
 						<li class="creditItem clearfix">
-							<div class="fr"  @click="$router.push('/work')">
+							<div class="fr" @click="$router.push('/work')">
 								<span class="itemAll itemStatus">已完成
 									<i class="iconfont">&#xe6ff;</i>
 								</span>
@@ -41,7 +60,7 @@
 							</div>
 						</li>
 						<li class="creditItem clearfix">
-							<div class="fr">
+							<div class="fr" @click="$router.push('/five')">
 								<span class="itemAll itemStatus">已完成
 									<i class="iconfont">&#xe6ff;</i>
 								</span>
@@ -52,7 +71,7 @@
 							</div>
 						</li>
 						<li class="creditItem clearfix">
-							<div class="fr">
+							<div class="fr" @click="$router.push('/edu')">
 								<span class="itemAll itemStatus">已完成
 									<i class="iconfont">&#xe6ff;</i>
 								</span>
@@ -63,7 +82,7 @@
 							</div>
 						</li>
 						<li class="creditItem clearfix">
-							<div class="fr">
+							<div class="fr" @click="$router.push('/creditPDF')">
 								<span class="itemAll itemStatus">已完成
 									<i class="iconfont">&#xe6ff;</i>
 								</span>
@@ -76,9 +95,28 @@
 					</ul>
 				</van-tab>
 				<van-tab title="企业信用">
-					<img src="/static/images/companyCredit.png" alt="" class="myCredit">
+					<!-- <img src="/static/images/companyCredit.png" alt="" class="myCredit"> -->
+					<div class="companyTop">
+						<img src="/static/images/bg-01.jpg" class="wb100 fl">
+						<div class="content">
+							<div class="title">
+								<span><img src="/static/images/logo/logo.png"></span>
+								<em>腾讯科技（上海）有限公司</em>
+							</div>
+							<p class="credited ">社会信用码 010111852364152</p>
+							<div class="claim">
+								<span><img src="/static/images/icon-1.png"></span>
+								<p class="claimCon">认领</p>
+								<p class="claimnumber">浏览量 3万+</p>
+							</div>
+							<div class="number">
+								<img src="/static/images/bg-02.png">
+								<em>98</em>
+							</div>
+						</div>
+					</div>
 					<div class="tc">
-							<van-button class="submit">信用修复</van-button>      
+						<van-button class="submit">信用修复</van-button>
 					</div>
 				</van-tab>
 			</van-tabs>
@@ -96,7 +134,7 @@
 			return {}
 		},
 		methods: {},
-		created() { }
+		created() {}
 	}
 </script>
 
@@ -110,9 +148,11 @@
 		line-height: 1.15rem;
 		color: #333;
 	}
+
 	/deep/ .van-tabs--card {
 		padding-top: 1.15rem
 	}
+
 	/deep/ .van-tabs__nav--card .van-tab {
 		height: 1.15rem;
 		border-right: none
@@ -125,20 +165,29 @@
 	/deep/ .van-tabs .van-tab__pane {
 		/* margin-top: .1rem */
 	}
-	/deep/ .van-tabs__nav--card .van-tab.van-tab--active{
+
+	/deep/ .van-tabs__nav--card .van-tab.van-tab--active {
 		background: #ffffff;
 		color: #e50015
 	}
-	/deep/ .van-tabs__nav--card{
+
+	/deep/ .van-tabs__nav--card {
 		border: none
 	}
-	/deep/ .van-tab--active::after{
-		content: '';position: absolute; bottom: 0; left: 30%; right: 30%; border-bottom: 3px solid #e50015
 
+	/deep/ .van-tab--active::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 30%;
+		right: 30%;
+		border-bottom: 3px solid #e50015
 	}
-	/deep/ .van-tab--active .van-ellipsis{
+
+	/deep/ .van-tab--active .van-ellipsis {
 		color: #e50015
 	}
+
 	.myCredit {
 		width: 100%;
 		vertical-align: middle
@@ -175,20 +224,31 @@
 	.itemTitle {
 		/* font-size: .6rem; */
 		font-family: "PingFang";
-		color: rgb( 51, 51, 51);
+		color: rgb(51, 51, 51);
 		/* line-height: 0.909; */
 		margin-left: .5rem;
 		line-height: 1rem;
 	}
+
 	.itemStatus {
 		font-family: "PingFang";
-		color: rgb( 179, 179, 179);
+		color: rgb(179, 179, 179);
 	}
-	.submit{
+
+	.submit {
 		width: 5rem;
 		border-radius: 4%;
-		background:rgb( 229, 0, 21 );;
+		background: rgb(229, 0, 21);
+		;
 		color: #fff;
 		margin-top: 3rem;
-	}	
+	}
+
+	.credited {
+		margin: 2%;
+		width: 100%;
+		text-align: center;
+		font-size: .34rem;
+		color: #fff;
+	}
 </style>

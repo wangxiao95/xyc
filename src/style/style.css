@@ -28,7 +28,7 @@
 .searchListBottom .labelList em{ display: block; color: #676767; font-size: .36rem; margin-bottom: .1rem}
 .searchListBottom .labelList i{ color: #3f3f3f; font-size: .4rem}
 .searchListBottom .labelList i.c-e70016{ color: #e50015}
-.searchLayerCon{position: fixed;top: 0; left: 0; width: 100%; height: 100%; z-index: 16; display: block}
+.searchLayerCon{position: fixed;top: 0; left: 0; width: 100%; height: 100%; z-index: 16; display: none}
 .layerBack{ position: fixed;top: 0; left: 0; width: 100%;z-index: 16; background: rgba(0,0,0,0.5); height: 100%; }
 .searchLayer{ position: fixed; top: 2.45rem; left: 0; width: 100%; background: #fff; height: 13rem; overflow: hidden; z-index: 18;}
 .searchLayer .leftOne,.searchLayer .leftTwo,.searchLayer .leftThree,.guildLayer .leftOne,.guildLayer .leftTwo{ width: 33%; float: left; background: #fff; height:100%; overflow: auto;} 
@@ -227,10 +227,10 @@
 
 
 /*wxs*/
-.statisticsResult2 { top: 1.5rem;}
+.statisticsResult2 { top: 1.3rem;}
 .searchListMargin2{margin-top: 2.3rem;}
 .creditLine { padding: .3rem .4rem .2rem;width: 100%; border-top: 1px solid #f5f5f5;}
-.creditBtton { background: #ff7e00;color: #fff; font-size: .44rem; width: 80%; margin: 0 auto .4rem auto; text-align: center;padding: .3rem; border-radius: 3px; }
+.creditBtton { background: #ff7e00;color: #fff; font-size: .44rem; width: 70%; margin: 0 auto .4rem auto; text-align: center;padding: .2rem; border-radius: 3px; }
 .creditBtton2 { font-size: .32rem; width: auto; margin: .26rem 0;padding: .1rem .2rem;}
 .credit .title{ line-height: 1.1rem; font-size:.46rem; font-weight: 400; color: #353535; display: inline-block; } 
 .credit .Add { display: inline-block; margin-left: 3%; color: #a6a6a6;}
@@ -426,7 +426,7 @@ input[type=checkbox]{
 /*意见反馈*/
 .feedbackTitle{width: 92%;margin: 4%;font-size: .42rem;color: #666;}
 .feedbackCon{width: 92%;margin: 0 4% 8%;box-shadow: 0px 0px 3px #eee;background: #fff;border-radius: 5px;overflow: hidden;padding: .35rem;font-size: .4rem;color: #999;}
-.feedbackCon textarea{border: none;margin: 0;padding: 0;height: 4rem;font-size: .4rem;color: #333;font-family: inherit;}
+.feedbackCon textarea{border: none;margin: 0;padding: 0;height: 4rem;font-size: .4rem;color: #333;font-family: inherit;width: 100%;resize: none;}
 /*发现新版本*/
 .editionLayer{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 500;}
 .editionLayerBg{ width: 100%; display: block; overflow: hidden; background: rgba(0,0,0,0.5); height: 100%;} 
@@ -499,3 +499,94 @@ input[type=checkbox]{
 @media screen and (min-width:414px) {
 
 }
+.creditBank {padding: .5rem;}
+.creditDesc .title { font-weight: 300; font-size: .5rem;}
+.creditDesc .textArea{ border: none; width: 100%; resize: none; background: #fff;color: #999;font-size: .44rem; margin-top: .2rem;padding: 0;}
+.creditBank ul li { border-bottom: 1px solid #f5f5f5;padding: .5rem 0 .3rem 0;}
+.creditBank ul li .creditTitle {font-size: .48rem; margin-bottom: .3rem; color: #333; font-family: PingFang;}
+.creditBank ul li .creditInput { background: #fff; font-size: .44rem; color: #999;font-weight: 500; border: none; height: auto; padding: 0; margin: 0;}
+.creditBank ul li input { width: auto;}
+.creditBank ul li .code { font-size: .4rem; color: #e50015; border: 1px solid #e50015; border-radius: 3px; padding: .05rem .15rem;}
+.creditBank ul li .code.active { color: #ccc; border: 1px solid #ccc;}
+.codeImg { width: 24%;}
+.creditBank .prompt { margin: 2% auto; width: 100%; padding: .2rem .4rem .5rem 0; font-size: .36rem; display: inline-block; }
+.creditBank .prompt a { color: #ff7d00;vertical-align: middle; }
+
+
+.creditVerify {margin: 0 .4rem;}
+.creditVerify .swiper-slide{ padding: .4rem 0;}
+.creditVerify dt{ font-size: .4rem; color: #333; line-height: .66rem; margin-bottom: .5rem; font-weight: 400}
+.creditVerify dt .photo{ width: 80%; margin: 3% 10%}
+.creditVerify dd{ margin-bottom: .4rem;width: 100%; padding-left: .7rem; color: #666; display: block; overflow: hidden; position: relative;}
+.creditVerify dd::before{content: '\e68d';position: absolute; top: 0rem; left: 0; font-size: .5rem; color: #ccc; }
+.creditVerify dd.errorRed::before{content: '\e672'; color: #e50015;}
+.creditVerify dd i{ position: absolute; top: 0; left: .7rem;}
+.creditVerify dd .photo{ width: 80%; margin-top: 3%}
+.creditVerifyWait {margin: 1.5rem;}
+.creditVerifyWait img { width: 100%; }
+.creditVerifyWait h3 {font-size: .5rem;margin-top: .4rem; color: #313131;}
+.creditVerifyWait p { color: #ccc;font-size: .36rem;margin-top: .4rem; text-align: left;}
+
+.creditVerifyDetails { color: #ccc;font-size: .36rem;margin: 0 .6rem; text-align: left;}
+.credit { margin: 8% 5% 2%;}
+.Five img {width: 40%; margin: 5% auto;}
+.Five dl {border-bottom: 1px solid #f5f5f5; text-align: left;margin-bottom: .5rem; }
+.Five dd{ margin-bottom: .4rem;width: 100%; padding-left: .7rem; color: #666;font-size: .44rem; display: inline-block; overflow: hidden; position: relative; width: 30%;}
+.Five dd::before{content: '\e68d';position: absolute; top: .03rem; left: 0; font-size: .55rem; color: #ccc; }
+.Five dd.errorGray{ color: #434343;}
+.Five dd.errorGray::before{content: '\e672'; color: #434343;}
+
+.FiveSearch {width: 100%; display: inline-block; background: #fff; padding: .2rem .4rem;}
+.FiveSearch {width: 100%;display: inline-block;background: #fff;padding: .2rem .4rem;}
+
+.FiveLine, .FiveButton {height: 1rem;margin: 1.5% .5%;border: 1px solid #eee;border-radius: 3px;overflow: hidden;position: relative;padding-left: .2rem;display: inline-block;}
+.FiveText {width: 62%;}
+.FiveLine .iconfont{position:absolute;top:50%;right:.2rem;font-size:.44rem;color:#ffcfcb;margin-top:-.2rem}
+.FiveText input{width:100%;display:inline-block;height:auto;margin-bottom:0;line-height:initial;font-family:inherit;font-weight:300;padding:.22rem 0;border:none;background:#fff;font-size:.28rem;float:left}
+.FiveLine .time{position:absolute;top:50%;left:.2rem;font-size:.44rem;color:#313131;margin-top:-.2rem}
+.FiveButton{text-align:center;padding:0;background:#ce1127;color:#fff;border:1px solid #ce1127;font-size:.42rem;padding:.2rem .4rem 0;font-weight:400}
+.FiveTitle{font-size:.42rem;color:#333;font-family:PingFang;line-height:1rem;margin:1.5% .5%}
+/* 五险查询 */
+.queryNav{border:0px solid #fff;}
+.queryNav li{border-bottom:0px solid #fff;border-right:0px solid #fff;height:auto;}
+.queryNav li a{display: block;width:2.4rem;height:2.4rem;border-radius: 50%;overflow: hidden;background:#e70000;margin:0.5rem auto;padding:0.45rem 0.25rem;}
+.queryNav li:first-child a{background: #f35645;}
+.queryNav li:nth-child(2) a{background: #f79b48;}
+.queryNav li:last-child a{background: #f9c450;}
+.queryNav li img{width:1rem;height: 1rem;display: block;vertical-align: middle;margin-top: 0;margin-bottom: 0;margin: 0 auto;}
+.queryNav li p{display: block;overflow: hidden;line-height:0.7rem;color: #fff;font-size: 0.36rem;text-align: center;}
+.perList{display: block;padding:0.6rem 0.6rem;overflow: hidden;background: #fff;}
+.marginTop02{margin-top:0.1rem;}
+.perListL{display: inline-block;width:1.8rem;height: 1.8rem;float: left;margin-right: 0.6rem;background: #f0f0f0;}
+.perListR{display: block;overflow: hidden;}
+.perListL span{width: 1.2rem;height: 1.2rem;display: block;overflow: hidden;display: -webkit-flex;justify-content: center;align-items: center;justify-content: center;margin: 0 auto;padding:0.1rem;}
+.perListL span img{width: 1rem;height: 1rem;display: block;overflow: hidden;vertical-align: middle;}
+.perListL em{display: block;overflow: hidden;line-height: 0.6rem;color: #666;text-align: center;}
+.perListRDetails{display: block;overflow: hidden;line-height:0.6rem;height:0.6rem;font-size: 0.36rem;color:#424242;}
+.perListRDetails span{display: inline-block;float: left;width: 40%;}
+.perInfo{display: block;overflow: hidden;line-height:0.6rem;font-size: 0.36rem;color:#424242;}
+.perInfo h3 {font-size: .4rem; display: block; margin: .05rem 0 .1rem;}
+
+.queryNew{display:block;overflow: hidden;}
+.quertTit{display:block;overflow: hidden;color: #fff;}
+.quertTit span{display: inline-block;background:url(/static/images/iconQuery05.png) no-repeat;background-size: cover;width: 4.06rem;height: 1.03rem;line-height: 1.03rem;text-indent: 0.4rem;font-size: .42rem;}
+.queryName{display: block;padding:0rem 0.4rem;overflow: hidden;line-height: 1.4rem;font-size: .42rem;color: #313131;font-weight: 600;}
+.queryNote{display: block;padding:0.2rem 0.4rem;overflow: hidden;line-height: .6rem;font-size: .36rem;}
+.queryTab{display: block;overflow: hidden;padding:0 0.4rem;}
+.queryTab table{background: #fff;border-collapse:collapse;border-right: 1px solid #f5f5f5;border-bottom: 1px solid #f5f5f5;}
+.queryTab table tr{display: block;overflow: hidden;height: 1rem;}
+.queryTab table td{display:inline-block;float: left;width: 50%;line-height:1rem;border-left: 1px solid #f5f5f5;border-top: 1px solid #f5f5f5;padding:0 0.2rem;font-size: 0.32rem; color: #535151;}
+.queryTab table td:first-child{text-align: right;}
+.queryTab table td:last-child{text-align: center;}
+.queryTop{display: block;overflow: hidden;margin-top: 0.4rem;}
+.queryTabThree table tr{display: block;overflow: hidden;height: 1rem;}
+.queryTabThree table td{display:inline-block;float: left;width:33.33%;line-height:1rem;border:1px solid #f5f5f5;padding:0 0.2rem;font-size: 0.32rem;text-align: center;}
+.queryTabThree table td:first-child{text-align: center;}
+.queryTabThree table td:last-child{text-align: center;}
+.queryTabThree thead tr{display: block;border-top:1px solid #e70000;}
+.queryTabThree thead td{background: #f3f3f3;display: inline-block;float: left;line-height: 1rem;width:33.33%;}
+.queryTabtwo table td,.queryTabtwo thead td { width: 70%;}
+.queryTabtwo table td:nth-last-child(2n+0),.queryTabtwo thead td:nth-last-child(2n+0) { width: 30%;}
+.queryTabFour table td { width: 25%;}
+.queryTab thead td { color: #313131;font-size: .4rem;}
+.queryTab thead.one td { width: 100%;}

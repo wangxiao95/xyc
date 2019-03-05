@@ -5,7 +5,7 @@
 			 <section class="wb100 dis-ib conTop">
 			    <ul class="inspectList" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading">
 			        <li v-for="(item,index) in pageList" :key="index">
-			            <a href="shopDetails.asp">
+			            <a @click="$router.push('/shopDetail')">
 			                <h5 class="title">{{item.title}}</h5>
 			                <p class="label">{{item.label}}</p>
 			                <i class="state c-e70016" v-if="item.state == '合格'">{{item.state}}</i>

@@ -4,7 +4,7 @@
         <div>
             <section class="wb100 dis-ib conTop conBottom">
         <div class="detailsTop">
-            <span class="logo"><img src="/static/images/logo/logo-1.png"></span>
+            <!-- <span class="logo"><img src="/static/images/logo/logo-1.png"></span> -->
             <em class="name">腾讯科技（上海）有限公司</em>
         </div>
         <ul class="detailsList">

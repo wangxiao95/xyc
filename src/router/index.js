@@ -9,15 +9,6 @@ const router = new Router({
 			path: '/',
 			redirect: "/home",
 		},
-		// 		 {
-		//       path: "/",
-		//       redirect: "/home"
-		//     },
-		//     {
-		//       path: '/home',
-		//       name: 'home',
-		//       component: home
-		//     },
 		{
 			path: '/home',
 			name: 'home',
@@ -76,6 +67,54 @@ const router = new Router({
 			}
 		},
 		{
+			path: '/creditBank',
+			name: 'creditBank',
+			component: () => import("@/views/creditBank/creditBank.vue"),
+			meta: {
+				title: "人行征信查询"
+			}
+		},
+		{
+			path: '/creditUnionPay',
+			name: 'creditUnionPay',
+			component: () => import("@/views/creditBank/creditUnionPay.vue"),
+			meta: {
+				title: "银行卡验证"
+			}
+		},
+		{
+			path: '/creditVerify',
+			name: 'creditVerify',
+			component: () => import("@/views/creditBank/creditVerify.vue"),
+			meta: {
+				title: "获取身份验证码"
+			}
+		},
+		{
+			path: '/creditVerifyWait',
+			name: 'creditVerifyWait',
+			component: () => import("@/views/creditBank/creditVerifyWait.vue"),
+			meta: {
+				title: "等待身份验证码"
+			}
+		},
+		{
+			path: '/creditVerifyDetails',
+			name: 'creditVerifyDetails',
+			component: () => import("@/views/creditBank/creditVerifyDetails.vue"),
+			meta: {
+				title: "查看个人征信"
+			}
+		},
+		{
+			path: '/fastList',
+			name: 'fastList',
+			component: () => import("@/views/company/fastList.vue"),
+			meta: {
+				title: "信用查"
+			}
+		},
+		{
 			path: '/reg',
 			name: 'reg',
 			component: () => import("@/views/login/reg.vue"),
@@ -124,6 +163,70 @@ const router = new Router({
 			}
 		},
 		{
+			path: '/publicUnit',
+			name: 'publicUnit',
+			component: () => import("@/views/pubilc/publicUnit.vue"),
+			meta: {
+				title: "公共单位查询"
+			}
+		},
+		{
+			path: '/publicList',
+			name: 'publicList',
+			component: () => import("@/views/pubilc/publicList.vue"),
+			meta: {
+				title: "公共单位查询"
+			}
+		},
+		{
+			path: '/five',
+			name: 'five',
+			component: () => import("@/views/five/five.vue"),
+			meta: {
+				title: "五险查询"
+			}
+		},
+		{
+			path: '/fiveQuery',
+			name: 'fiveQuery',
+			component: () => import("@/views/five/fiveQuery.vue"),
+			meta: {
+				title: "五险查询"
+			}
+		},
+		{
+			path: '/fiveHospital',
+			name: 'fiveHospital',
+			component: () => import("@/views/five/fiveHospital.vue"),
+			meta: {
+				title: "您的定点医院"
+			}
+		},
+		{
+			path: '/fivePay',
+			name: 'fivePay',
+			component: () => import("@/views/five/fivePay.vue"),
+			meta: {
+				title: "缴费信息"
+			}
+		},
+		{
+			path: '/fiveMedical',
+			name: 'iveMedical',
+			component: () => import("@/views/five/fiveMedical.vue"),
+			meta: {
+				title: "医疗待遇"
+			}
+		},
+		{
+			path: '/publicDetail',
+			name: 'publicDetail',
+			component: () => import("@/views/pubilc/publicDetail.vue"),
+			meta: {
+				title: "详情"
+			}
+		},
+		{
 			path: '/search',
 			name: 'search',
 			component: () => import("@/views/search/search.vue"),
@@ -135,6 +238,22 @@ const router = new Router({
 			path: '/creditPay',
 			name: 'creditPay',
 			component: () => import("@/views/creditZM/creditPay.vue"),
+			meta: {
+				title: "信用报告"
+			}
+		},
+		{
+			path: '/creditReturn',
+			name: 'creditReturn',
+			component: () => import("@/views/creditZM/creditReturn.vue"),
+			meta: {
+				title: "信用报告"
+			}
+		},
+		{
+			path: '/creditProve',
+			name: 'creditProve',
+			component: () => import("@/views/creditZM/creditProve.vue"),
 			meta: {
 				title: "信用报告"
 			}
@@ -308,6 +427,14 @@ const router = new Router({
 			}
 		},
 		{
+			path: '/creditRepair',
+			name: 'creditRepair',
+			component: () => import("@/views/my/creditRepair.vue"),
+			meta: {
+				title: "信用修复"
+			}
+		},
+		{
 			path: '/messageCenter',
 			name: 'messageCenter',
 			component: () => import("@/views/my/messageCenter.vue"),
@@ -329,6 +456,30 @@ const router = new Router({
 			component: () => import("@/views/my/attestation/attestationStatus.vue"),
 			meta: {
 				title: "认证管理"
+			}
+		},
+		{
+			path: '/attestationStatuss',
+			name: 'attestationStatuss',
+			component: () => import("@/views/my/attestation/attestationStatuss.vue"),
+			meta: {
+				title: "企业空间管理"
+			}
+		},
+		{
+			path: '/attestationList',
+			name: 'attestationList',
+			component: () => import("@/views/my/attestation/attestationList.vue"),
+			meta: {
+				title: "企业空间管理"
+			}
+		},
+		{
+			path: '/attestations',
+			name: 'attestations',
+			component: () => import("@/views/my/attestation/attestations.vue"),
+			meta: {
+				title: "企业空间管理"
 			}
 		},
 		{

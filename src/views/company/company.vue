@@ -18,7 +18,7 @@
                     <span><img src="/static/images/logo/logo.png"></span>
                     <em>{{allData.ENTNAME}}</em>
                 </div>
-                <p class="credit ">社会信用码 {{allData.PRIPID}}</p>
+                <p class="credited ">社会信用码 {{allData.PRIPID}}</p>
                 <div class="claim">
                     <span><img src="/static/images/icon-1.png"></span>
                     <p class="claimCon">认领</p>
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="companyIhfo">
-            <span class="name"><em>简介：腾讯科技（上海）有限公司成立于</em><a @click="$router.push('/companyDetail')">详情</a></span>
+            <span class="name"><em>{{allData.OPSCOPE}}</em><a @click="$router.push('/companyDetail')">详情</a></span>
             <a href="javascript:;" class="label"><img src="/static/images/icon-24.png"></a>
             <a href="javascript:;" class="label"><img src="/static/images/icon-23.png"></a>
             <a href="javascript:;" class="label"><img src="/static/images/icon-22.png"></a>
@@ -39,7 +39,7 @@
         <div class="searchListBottom companyReg">
             <span class="labelList">
                 <em>法定代表人</em>
-                <i class="c-e70016">奚丹</i>
+                <i class="c-e70016">{{allData.NAME}}</i>
             </span>
             <span class="labelList">
                 <em>注册资本</em>
@@ -77,37 +77,37 @@
             <h3 class="companyTitle">机构信息</h3>
             <ul class="mechanismList">
                 <li>
-                    <a href="javascript:;">
+                    <a @click="$router.push('/companyDetail')">
                         <img src="/static/images/icon-2.png">
                         <p>工商信息</p>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a @click="$router.push('/companyDetail')">
                         <img src="/static/images/icon-3.png">
                         <p>股东出资情况</p>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a @click="$router.push('/companyDetail')">
                         <img src="/static/images/icon-4.png">
                         <p>企业管理人员</p>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a @click="$router.push('/companyDetail')">
                         <img src="/static/images/icon-5.png">
                         <p>历史变更</p>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a @click="$router.push('/companyDetail')">
                         <img src="/static/images/icon-6.png">
                         <p>分支机构</p>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;">
+                    <a @click="$router.push('/companyDetail')">
                         <img src="/static/images/icon-7.png">
                         <p>行政处罚历史</p>
                     </a>
@@ -374,6 +374,8 @@
       }
     },
 		created(){
+      this.allData = Object.assign({}, this.allData,  this.$route.params)
+
       this.getBaseData();
       this.getPerson();
     }
@@ -381,5 +383,11 @@
 </script>
 
 <style scoped>
-	
+	.credited{
+    width: 100%;
+    text-align: center;
+    font-size: .34rem;
+    color: #fff;
+	  margin: 2%;
+	}
 </style>

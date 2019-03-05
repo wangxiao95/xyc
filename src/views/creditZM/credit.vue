@@ -2,10 +2,10 @@
     <div>
         <Header></Header>
         <div class="container">
-            <div class="statisticsResult statisticsResult2 credit">
+            <div class="statisticsResult statisticsResult2 credit credited">
             <h5 class="title">报告内容定制</h5>
             <span class="Add">[选择全部]</span>
-            <a href="javascript:;" class="creditBtton creditBtton2 fr">样本浏览</a>
+            <a @click="$router.push('/creditProve')" class="creditBtton creditBtton2 fr">样本浏览</a>
         </div>
         <div class="mui-active searchListMargin searchListMargin2">
             <div class="mui-scroll">
@@ -205,7 +205,7 @@
             <div class="money">金额：
                 <i>120.00</i>
             </div>
-            <a href="" class="Creditbotton fr">立即生成</a>
+            <a @click="$router.push('/creditReturn')" class="Creditbotton fr">立即生成</a>
         </div>
         </div>
     </div>
@@ -228,5 +228,8 @@
 <style scoped>
 .container{
     margin-top: .6rem
+}
+.credited{
+	margin: 2% 0!important;
 }
 </style>

@@ -1,70 +1,72 @@
+
 <template>
-    <div>
+    <div class="container">
         <Header></Header>
-        <div>
-            
+        <img src="/static/images/icon-35.png" class="logo">
+        <div class="marginTop">
             <div class="userList">
-                <ul :model="formData">
+                <ul>
+                    <!-- <li class="title">个人信息</li> -->
                     <li class="clearfix">
-                        <span>姓名：</span>
-                        <input type="text" v-model="formData.accountNo">
-                    </li>
-                    <li class="clearfix">
-                        <span>手机号：</span>
-                        <input type="text" v-model="formData.password">
+                        <span class="fl">姓名：</span>
+                        <input class="fr tr" type="text" placeholder="请输入姓名">
                     </li>
                     <li class="clearfix">
-                        <span>邮箱：</span>
-                        <input type="text" v-model="formData.password">
+                        <span class="fl">手机号：</span>
+                        <input class="fr tr" type="text" placeholder="请输入手机号码">
                     </li>
                     <li class="clearfix">
-                        <span>行政相对人：</span>
-                        <input type="text" v-model="formData.password">
+                        <span class="fl">邮箱：</span>
+                        <input class="fr tr" type="text" placeholder="请输入邮箱">
                     </li>
-                     <li class="clearfix">
-                        <span>同意社会信用代码：</span>
-                        <input type="text" v-model="formData.password">
+                    <li class="clearfix">
+                        <span class="fl">行政相对人：</span>
+                        <input class="fr tr" type="text" placeholder="请输入行政相对人">
                     </li>
-                      <li class="clearfix">
-                        <span>行政处罚决定文书号：</span>
-                        <input type="text" v-model="formData.password">
+                    <li class="clearfix">
+                        <span class="fl" >统一社会信用代码：</span>
+                        <input class="fr tr" type="text" placeholder="请输入信用代码">
                     </li>
-                     <li class="clearfix">
-                        <span>处罚名称：</span>
-                        <input type="text" v-model="formData.password">
+                    <li class="clearfix">
+                        <span class="fl">行政处罚决定文书号：</span>
+                        <input class="fr tr" type="text" placeholder="请输入文书号">
                     </li>
-                     <li class="clearfix">
-                        <span>处罚决定日期：</span>
-                        <input type="text" v-model="formData.password">
+                    <li class="clearfix">
+                        <span class="fl">处罚名称：</span>
+                        <input class="fr tr" type="text" placeholder="请输入处罚名称">
                     </li>
-                     <li class="clearfix">
-                        <span>处罚机关：</span>
-                        <input type="text" v-model="formData.password">
+                    <li class="clearfix">
+                        <span class="fl">处罚决定日期：</span>
+                        <input class="fr tr" type="text" placeholder="请输入日期"> 
                     </li>
-                     <li class="clearfix">
-                        <span>申请修复事由：</span>
-                        <input type="text" v-model="formData.password">
-                    </li>
-                     <li class="clearfix">
-                        <span>附件上传：</span>
-                        <input type="text" v-model="formData.password">
-                    </li>
-                     <li class="clearfix">
-                        <span>验证码：</span>
-                        <input type="text" v-model="formData.password">
-                    </li>
-                </ul>
-            </div>
-            <div class="desc">*本人保证所填信息真实有效，如果提供虚假信息的，同意列入本人的诚信档案。</div>
-            <div class="tc">
-                <van-button type="primary">提交</van-button>      
+					 <li class="clearfix">
+					    <span class="fl">处罚机关：</span>
+					    <input class="fr tr" type="text" placeholder="请输入处罚机关">
+					</li>
+					<li class="clearfix">
+					    <span class="fl">申请修复事由：</span>
+					    <input class="fr tr" type="text" placeholder="请输入修复事由">
+					</li>
+					<li class="clearfix">
+					    <span class="fl">附件上传：</span>
+					    <input class="fr tr" type="text" placeholder="请上传附件">
+					</li>
+					<li class="clearfix">
+					    <span class="fl">验证码：</span>
+					    <input class="fr tr" type="text" placeholder="请输入验证码">
+					</li>
+                </ul>   
+				<div class="desc">
+					*本人保证所填信息真实有效，如果提供虚假信息的，同意列入本人的诚信档案。
+				</div>
+                <van-button class="submit" @click="submit">提交</van-button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import Header from "@/components/Header";
+    import Header from "@/components/Header"
     export default {
         components: {
             Header
@@ -72,63 +74,88 @@
         data() {
             return {
                 formData: {
-                    accountNo: "",
-                    password: ""
-
+                    company: "",
+                    idCard: "",
+                    name: "",
+                    mobile: "",
+                    email: "",
                 },
-                radio:""
-            };
+                checked: false
+            }
         },
-        methods: {},
+        methods: {
+            submit() {
+                this.$router.push("/creditRepair")
+            }
+        },
         created() { }
-    };
+    }
 </script>
 
 <style scoped>
-    .userList {
-        margin-top: 1.6rem
+	.desc{
+		color: #f00;
+		padding: .2rem .3rem;
+	}
+        .title {
+        font-weight: bold;
+        font-size: .5rem
     }
-    .userList li{
-        margin: .3rem .6rem
+    .read {
+        font-size: .38rem;
+        color: #ccc;
+        padding: .4rem .4rem;
     }
-    .userList li span{
-        float: left;
+
+    /deep/ .van-radio__label {
+        color: #999;
+    }
+
+    .userList li {
+        margin: 0rem .4rem;
+        border-bottom: 1px solid rgb(241, 241, 241);
+        padding: .3rem 0;
+		
+    }
+
+    .marginTop {
+        border-top: 1px solid rgb(241, 241, 241)
+    }
+
+    .userList li span {
+        font-family: "Microsoft YaHei";
+        color: #444;
+        font-size: .44rem;
         display: inline-block;
         line-height: .9rem;
-        width: 4.1rem;
-        text-align: right;
-        margin-right: .3rem
+        /* width: 2.4rem */
     }
+	.userList{
+		margin-bottom: 1.5rem;}
     .userList li input {
         height: .9rem;
-        width: 6rem;
-        float: left;
+        width: 5.5rem;
         overflow: hidden;
         line-height: .7rem;
         font-size: .44rem;
         color: #383838;
         font-family: inherit;
         margin: 0;
-        padding:0 .15rem;
-        border: 1px solid #ccc;
+        padding: 0 .15rem;
+        background: #fff
+        /* border: 1px solid #ccc; */
     }
-    .userList li input:focus{
-        border-color: #409eff
+
+    /deep/ .van-checkbox__icon--checked .van-icon {
+        background: #e50015;
+        border-color: #e50015;
     }
-    .title{
-        font-weight: bold;
-        font-size: .5rem
-    }
-    /deep/ .van-radio-group{
-        display: flex;
-        justify-content: space-around
-    }
-    /deep/ .van-button{
-        width: 4.6rem;
-        margin-top: 1rem;
-    }
-    .desc{
-        color: #f00;
-        padding:.2rem 1rem
+
+    .submit {
+        color: #fff;
+        background: #e50015;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
     }
 </style>
